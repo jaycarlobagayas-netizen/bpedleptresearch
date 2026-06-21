@@ -446,6 +446,22 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
 .partner p{font-size:.84rem;color:var(--muted);margin-top:6px}
 .partner .flag{font-size:.95rem}
 @media(max-width:760px){.partner-grid{grid-template-columns:1fr}}
+/* ===== TEXT FEATURE (headline + details, no photo) ===== */
+.txt-feature{display:grid;grid-template-columns:.95fr 1.05fr;gap:46px;align-items:start;margin-top:8px}
+.txt-feature .tf-head .eyebrow{display:block;margin-bottom:10px}
+.txt-feature .tf-head h2{font-family:var(--grok);font-size:clamp(25px,3.4vw,40px);font-weight:600;line-height:1.08;letter-spacing:-.02em;margin:6px 0 14px}
+.txt-feature .tf-head .lead{color:var(--muted);font-size:16px}
+.txt-feature .tf-head .chips{margin-top:22px}
+.tf-points{display:flex;flex-direction:column;gap:14px}
+.tf-point{display:flex;gap:16px;align-items:flex-start;
+  background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.012)),linear-gradient(180deg,rgba(26,18,20,.66),rgba(19,13,15,.6));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;padding:18px 20px;transition:border-color .3s,transform .3s}
+.tf-point:hover{border-color:var(--line-gold);transform:translateY(-3px)}
+.tf-point .tfi{width:46px;height:46px;flex:none;border-radius:13px;display:grid;place-items:center;background:linear-gradient(150deg,rgba(242,183,5,.2),rgba(165,35,56,.2));border:1px solid rgba(242,183,5,.3);color:var(--gold-soft)}
+.tf-point .tfi .ico{width:23px;height:23px;stroke:url(#icoGrad)}
+.tf-point h4{font-family:var(--grok);font-weight:600;color:#fff;font-size:1.02rem;margin-bottom:3px}
+.tf-point p{color:var(--muted);font-size:.9rem}
+@media(max-width:860px){.txt-feature{grid-template-columns:1fr;gap:26px}}
 </style>
 </head>
 <body>
@@ -515,15 +531,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
 <section class="hero">
   <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
   <div class="wrap hero-inner">
-    <span class="pill reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-medal" xlink:href="#i-medal"/></svg> Fostering Excellence · March 2026 LEPT</span>
+    <span class="pill reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Bachelor of Physical Education · MSU – General Santos</span>
     <h1>
-      <span class="mask-line"><span>A Historic <span class="gold">100% Passing Rate</span></span></span>
-      <span class="mask-line"><span>for the Pioneering BPED Batch</span></span>
+      <span class="mask-line"><span>Move. Teach. <span class="gold">Inspire.</span></span></span>
+      <span class="mask-line"><span>Your future in Physical Education</span></span>
     </h1>
-    <p class="sub reveal d1">Celebrating <strong>Batch Maragsa</strong> — the pioneering Bachelor of Physical Education graduates of Mindanao State University – General Santos City: 53 first-time takers, 53 new Licensed Professional Teachers, and 9 national top notchers.</p>
+    <p class="sub reveal d1">Turn your passion for sport and movement into a <strong>licensed teaching career</strong>. Study the Bachelor of Physical Education at Mindanao State University – General Santos — a program built on excellence, innovation, and a record-setting <strong>100% first-take LEPT passing rate</strong>.</p>
     <div class="hero-actions reveal d2">
-      <a href="#topnotchers" class="btn btn-gold">Meet the Top Notchers <span class="arrow">→</span></a>
-      <a href="#enroll" class="btn btn-ghost">Study BPED Here ↓</a>
+      <a href="#enroll" class="btn btn-gold">Enroll in BPED <span class="arrow">→</span></a>
+      <a href="#topnotchers" class="btn btn-ghost">Meet the Top Notchers</a>
       <a href="#performance" class="btn btn-ghost">View Analytics</a>
     </div>
     <div class="hero-stats reveal d3" role="list">
@@ -841,33 +857,32 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
 <!-- INTERNATIONAL EXCHANGE -->
 <section class="section" id="exchange" aria-labelledby="h-exch">
   <div class="wrap">
-    <div class="feature reveal">
-      <div class="feat-media">
-        <span class="badge">Universitas Negeri Malang 🇮🇩</span>
-        <div class="ph"><div><span class="big"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe" xlink:href="#i-globe"/></svg></span><strong>International Research Exposure</strong><small>images/exchange-research.jpg</small></div></div>
-        <img src="images/exchange-research.jpg" alt="BPED faculty and students at the International Research Exposure, Universitas Negeri Malang, Indonesia" loading="lazy" onerror="this.style.display='none'">
-      </div>
-      <div class="feat-body">
-        <span class="didyou">Did you know?</span>
+    <div class="section-head center reveal">
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe" xlink:href="#i-globe"/></svg> Global Reach</span>
+      <h2 id="h-exch">An ongoing <span class="gold">international exchange</span></h2>
+      <p>The BPED Department partners with Universitas Negeri Malang (UM), Indonesia — one of the country's leading universities for education and sports science.</p>
+    </div>
+    <div class="txt-feature reveal">
+      <div class="tf-head">
+        <span class="didyou"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Did you know?</span>
         <div class="um-badge-logo">
           <img src="images/logo-um.png" alt="Universitas Negeri Malang logo" onerror="this.style.display='none'">
           <span><b>Universitas Negeri Malang</b><small>Indonesia · partner university</small></span>
         </div>
-        <h2 id="h-exch">An ongoing <span class="gold">international exchange</span> with Universitas Negeri Malang</h2>
-        <p>The BPED Department maintains an <strong>active international exchange program with Universitas Negeri Malang (UM)</strong> in Indonesia — one of the country's leading universities for education and sports science.</p>
-        <p>Faculty and students take part in <strong>international research exposure</strong> — presenting studies, sharing teaching practices, and building a cross-cultural academic network in physical education.</p>
+        <h2>Learning beyond <span class="gold">borders</span></h2>
+        <p class="lead">Faculty and students take part in international research exposure — presenting studies, sharing teaching practices, and building a cross-cultural academic network in physical education.</p>
         <div class="chips">
           <span class="chip gold">Student mobility</span>
           <span class="chip">Faculty exchange</span>
           <span class="chip">Research exposure</span>
           <span class="chip">Cross-cultural PE</span>
-          <span class="chip">Global network</span>
         </div>
       </div>
-    </div>
-    <div class="wide-media reveal" style="min-height:220px">
-      <div class="ph" style="position:absolute;inset:0;z-index:1;display:grid;place-items:center;text-align:center"><div><span style="font-size:2.4rem"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cap" xlink:href="#i-cap"/></svg></span><strong style="display:block;color:var(--gold-soft);font-family:var(--grok);margin-top:8px">Excellent research presentations at UM Malang</strong><small style="color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem">images/exchange-congrats.jpg</small></div></div>
-      <img src="images/exchange-congrats.jpg" alt="SCOPE congratulations to BPED faculty and exchange students for excellent research presentations at Universitas Negeri Malang" loading="lazy" style="position:relative;z-index:2" onerror="this.style.display='none'">
+      <div class="tf-points">
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe" xlink:href="#i-globe"/></svg></span><div><h4>International research exposure</h4><p>BPED faculty and students present their studies at UM Malang, Indonesia.</p></div></div>
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-users" xlink:href="#i-users"/></svg></span><div><h4>Student &amp; faculty mobility</h4><p>Academic exchange of students and faculty between the two universities.</p></div></div>
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cap" xlink:href="#i-cap"/></svg></span><div><h4>Recognized presentations</h4><p>BPED delegates commended for excellent research presentations abroad.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -905,17 +920,16 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
 <!-- LEPT REVIEW -->
 <section class="section" id="review" aria-labelledby="h-review">
   <div class="wrap">
-    <div class="feature reveal">
-      <div class="feat-media">
-        <span class="badge">BLEPT MAPEH · PE Majorship Review</span>
-        <div class="ph"><div><span class="big"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target" xlink:href="#i-target"/></svg></span><strong>BLEPT Majorship Review</strong><small>images/review-program.jpg</small></div></div>
-        <img src="images/review-program.jpg" alt="BLEPT MAPEH Majorship and PE Majorship Review program" loading="lazy" onerror="this.style.display='none'">
-      </div>
-      <div class="feat-body">
-        <span class="eyebrow">The road to the boards</span>
-        <h2 id="h-review">A structured <span class="gold">LEPT review</span> program</h2>
-        <p>The department's record-setting results were no accident. A <strong>faculty-led review program</strong> guided Batch Maragsa from the classroom to licensure with focused, sustained preparation.</p>
-        <p>Built around the three LEPT components — General Education, Professional Education, and the PE Major — the review emphasized early preparation, regular practice, and personal mentoring.</p>
+    <div class="section-head center reveal">
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target" xlink:href="#i-target"/></svg> The Road to the Boards</span>
+      <h2 id="h-review">A structured <span class="gold">LEPT review</span> program</h2>
+      <p>The department's record-setting results were no accident — a faculty-led review guided Batch Maragsa from the classroom to licensure.</p>
+    </div>
+    <div class="txt-feature reveal">
+      <div class="tf-head">
+        <span class="eyebrow">BLEPT MAPEH · PE Majorship Review</span>
+        <h2>Preparation that <span class="gold">delivers</span></h2>
+        <p class="lead">Built around the three LEPT components — General Education, Professional Education, and the PE Major — the review emphasized early preparation, regular practice, and personal mentoring.</p>
         <div class="chips">
           <span class="chip gold">Mock examinations</span>
           <span class="chip">Drill sessions</span>
@@ -923,6 +937,11 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
           <span class="chip">Faculty mentoring</span>
           <span class="chip">Study scheduling</span>
         </div>
+      </div>
+      <div class="tf-points">
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target" xlink:href="#i-target"/></svg></span><div><h4>Mock examinations</h4><p>Realistic, timed practice that mirrors the actual LEPT.</p></div></div>
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg></span><div><h4>Component coaching</h4><p>Focused sessions on General Education, Prof. Ed., and the PE Major.</p></div></div>
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-users" xlink:href="#i-users"/></svg></span><div><h4>Faculty mentoring</h4><p>One-on-one guidance, feedback, and accountability throughout.</p></div></div>
       </div>
     </div>
   </div>
@@ -978,23 +997,22 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
       <h2 id="h-pubs">Scopus-indexed <span class="gold">publications</span></h2>
       <p>The official repository of scientific publications by the BPED Department faculty.</p>
     </div>
-    <div class="feature reveal" style="margin-bottom:48px">
-      <div class="feat-media">
-        <span class="badge">Editorial Board · Scopus Q3</span>
-        <div class="ph"><div><span class="big"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask" xlink:href="#i-flask"/></svg></span><strong>Research Excellence</strong><small>images/research-editorial.jpg</small></div></div>
-        <img src="images/research-editorial.jpg" alt="BPED chairperson appointed editorial board member of the Journal of Coaching and Sports Science (Scopus Q3)" loading="lazy" onerror="this.style.display='none'">
-      </div>
-      <div class="feat-body">
+    <div class="txt-feature reveal" style="margin-bottom:48px">
+      <div class="tf-head">
         <span class="eyebrow">A research-active department</span>
-        <h2 style="margin-top:8px">Strong in <span class="gold">research publication</span></h2>
-        <p>BPED faculty publish consistently in <strong>Scopus-indexed, peer-reviewed journals</strong> across sports science, pedagogy, and PE innovation — and even serve on <strong>international editorial boards</strong>, such as the Journal of Coaching and Sports Science (JCSS).</p>
-        <p>The department's work extends into <strong>international research collaborations</strong> with leading universities abroad.</p>
+        <h2>Strong in <span class="gold">research publication</span></h2>
+        <p class="lead">BPED faculty publish consistently in Scopus-indexed, peer-reviewed journals across sports science, pedagogy, and PE innovation — and even serve on international editorial boards, such as the Journal of Coaching and Sports Science (JCSS).</p>
         <div class="chips">
           <span class="chip gold">Scopus-indexed</span>
           <span class="chip">Sports science</span>
           <span class="chip">PE innovation</span>
           <span class="chip">Global collaborations</span>
         </div>
+      </div>
+      <div class="tf-points">
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask" xlink:href="#i-flask"/></svg></span><div><h4>Editorial board · Scopus Q3</h4><p>Appointed editorial board member of the Journal of Coaching and Sports Science.</p></div></div>
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book" xlink:href="#i-book"/></svg></span><div><h4>Peer-reviewed output</h4><p>Multiple Scopus-indexed studies published each year.</p></div></div>
+        <div class="tf-point"><span class="tfi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-handshake" xlink:href="#i-handshake"/></svg></span><div><h4>Global collaborations</h4><p>Joint research with partner universities abroad.</p></div></div>
       </div>
     </div>
 
