@@ -278,6 +278,69 @@ footer{border-top:1px solid var(--line);padding:80px 0 36px;margin-top:40px;posi
   .hero{padding:140px 0 80px}
 }
 </style>
+<style>
+/* ===== PROMO / FEATURES ===== */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+.feature+.feature{margin-top:64px}
+.feature.rev .feat-media{order:2}
+.feat-media{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:360px;background:linear-gradient(150deg,var(--maroon),var(--maroon-deep));box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.feat-media img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:2;min-height:360px}
+.feat-media .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;z-index:1}
+.feat-media .ph .big{font-size:3.2rem;display:block;margin-bottom:10px}
+.feat-media .ph strong{color:var(--gold-soft);font-family:var(--grok);font-size:1.05rem}
+.feat-media .ph small{display:block;color:rgba(255,255,255,.55);font-size:.72rem;margin-top:8px;letter-spacing:.1em;text-transform:uppercase}
+.feat-media .badge{position:absolute;top:18px;left:18px;z-index:3;background:rgba(10,6,8,.78);border:1px solid var(--line-gold);color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+.feat-body .eyebrow{margin-bottom:6px;display:block}
+.feat-body h2{font-family:var(--grok);font-size:clamp(26px,3.4vw,42px);font-weight:600;line-height:1.08;margin:12px 0 16px;letter-spacing:-.02em}
+.feat-body p{color:var(--muted);font-size:16px;margin-bottom:14px}
+.feat-body p strong{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{font-size:.8rem;color:#fff;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
+.chip.gold{color:var(--gold);border-color:var(--line-gold);background:rgba(242,183,5,.06)}
+a.b-card{display:block;color:inherit}
+a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85rem;display:inline-flex;align-items:center;gap:6px}
+.didyou{display:inline-flex;align-items:center;gap:8px;background:rgba(242,183,5,.1);border:1px solid var(--line-gold);color:var(--gold);font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:6px}
+@media(max-width:860px){
+  .feature{grid-template-columns:1fr;gap:26px}
+  .feature.rev .feat-media{order:0}
+  .feat-media,.feat-media img{min-height:240px}
+}
+/* ===== LOGOS ===== */
+.nav-seal-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
+.logo-strip{display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;margin:48px auto 0}
+.logo-strip img{height:66px;width:auto;object-fit:contain;background:#fff;border-radius:50%;padding:5px;box-shadow:0 8px 22px rgba(0,0,0,.4);transition:transform .3s}
+.logo-strip img:hover{transform:translateY(-5px) scale(1.06)}
+.logo-cap{display:block;text-align:center;color:var(--muted-2);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;margin-top:18px}
+.um-badge-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.um-badge-logo img{width:56px;height:56px;border-radius:50%;background:#fff;padding:4px;object-fit:contain;flex:none}
+.um-badge-logo b{font-family:var(--grok);font-weight:600;color:#fff;font-size:1rem;line-height:1.2;display:block}
+.um-badge-logo small{display:block;color:var(--muted);font-weight:400;font-size:.82rem}
+.wide-media{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);margin-top:24px;background:linear-gradient(150deg,var(--maroon),var(--maroon-deep))}
+.wide-media img{width:100%;display:block}
+/* ===== BIOMECHANICS ===== */
+#biomech{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 0%,rgba(165,35,56,.12),transparent 60%)}
+.biomech-stage{position:relative;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,var(--panel-2),var(--panel));overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.biomech-stage svg{display:block;width:100%;height:auto}
+.bm-chips{position:absolute;left:22px;bottom:18px;z-index:3;display:flex;gap:10px;flex-wrap:wrap}
+.bm-chip{font-family:var(--grok);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line-gold);background:rgba(10,6,8,.6);border-radius:999px;padding:6px 12px;backdrop-filter:blur(6px)}
+.bm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.bm-pillar{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:22px;transition:border-color .3s,transform .3s}
+.bm-pillar:hover{border-color:var(--line-gold);transform:translateY(-4px)}
+.bm-pillar .ic{font-size:1.7rem}
+.bm-pillar h4{font-family:var(--grok);font-size:1rem;color:var(--gold-soft);margin:10px 0 6px}
+.bm-pillar p{color:var(--muted);font-size:.86rem}
+@keyframes bmStrobe{0%,82%,100%{opacity:.07}42%{opacity:.42}}
+.bm-ghost{animation:bmStrobe 2.6s linear infinite}
+.bm-comdot{animation:bmDash 1.2s linear infinite}
+@keyframes bmDash{to{stroke-dashoffset:-14}}
+@keyframes bmForce{0%,100%{opacity:.35;transform:scaleY(.82)}50%{opacity:1;transform:scaleY(1)}}
+.bm-force{transform-box:view-box;transform-origin:690px 322px;animation:bmForce 1.4s ease-in-out infinite}
+@keyframes bmScan{0%{transform:translateX(-40px);opacity:0}10%,90%{opacity:.5}100%{transform:translateX(820px);opacity:0}}
+.bm-scan{transform-box:view-box;animation:bmScan 5s linear infinite}
+@media(prefers-reduced-motion:reduce){.bm-ghost,.bm-comdot,.bm-force,.bm-scan{animation:none}.bm-ghost{opacity:.3}}
+@media(max-width:860px){.bm-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.bm-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -289,15 +352,16 @@ footer{border-top:1px solid var(--line);padding:80px 0 36px;margin-top:40px;posi
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="#main" class="logo">
-      <span class="seal" aria-hidden="true">MSU</span>
+      <span class="seal" aria-hidden="true" style="position:relative;overflow:hidden">MSU<img src="images/logo-msu.png" alt="" class="nav-seal-img" onerror="this.remove()"></span>
       <span>BPED · LEPT · Research<small>MSU – General Santos</small></span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#highlights">Highlights</a>
+      <a href="#strengths">Why BPED</a>
       <a href="#topnotchers">Top Notchers</a>
-      <a href="#performance">Performance</a>
-      <a href="#organization">Organization</a>
-      <a href="#publications">Publications</a>
+      <a href="#exchange">Global</a>
+      <a href="#review">LEPT Review</a>
+      <a href="#publications">Research</a>
       <a href="#updates">Updates</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -328,6 +392,12 @@ footer{border-top:1px solid var(--line);padding:80px 0 36px;margin-top:40px;posi
       <div class="cell" role="listitem"><div class="num" data-count="9">0</div><div class="lbl">Top Notchers</div></div>
       <div class="cell" role="listitem"><div class="num" data-count="94.58" data-dec="2" data-suffix="%">0</div><div class="lbl">Avg Major Rating</div></div>
     </div>
+    <div class="logo-strip reveal d4">
+      <img src="images/logo-msu.png" alt="Mindanao State University – General Santos" onerror="this.style.display='none'">
+      <img src="images/logo-bped.png" alt="Bachelor of Physical Education" onerror="this.style.display='none'">
+      <img src="images/logo-um.png" alt="Universitas Negeri Malang" onerror="this.style.display='none'">
+    </div>
+    <span class="logo-cap reveal d4">Mindanao State University – GenSan · College of Education · Bachelor of Physical Education · in partnership with Universitas Negeri Malang</span>
   </div>
 </section>
 
@@ -367,6 +437,93 @@ footer{border-top:1px solid var(--line);padding:80px 0 36px;margin-top:40px;posi
       <div class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon">📚</div><h3>Prof. Ed. the challenge</h3><p>87% identified Professional Education as the hardest area, matching its lowest mean of 87.31%.</p></div>
       <div class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon">⏱️</div><h3>Preparation pays off</h3><p>72% prepared for 4–6 months, and 60% studied at least 3–5 times a week, up to daily.</p></div>
       <div class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon">📈</div><h3>Consistent excellence</h3><p>Overall ratings ranged from 84.6% to 94.2%, with a median of 91.5% across the batch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section class="section" id="strengths" aria-labelledby="h-str" style="padding-top:30px">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Why BPED MSU–GenSan</span>
+      <h2 id="h-str">A department built for <span class="gold">excellence</span></h2>
+      <p>Five pillars that make the Bachelor of Physical Education program a benchmark in Mindanao and beyond.</p>
+    </div>
+    <div class="bento">
+      <a href="#topnotchers" class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon">🏆</div><h3>100% LEPT passing</h3><p>A perfect first-take board record with 9 national top notchers — proof of academic rigor.</p><span class="b-more">See the achievers →</span></a>
+      <a href="#exchange" class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon">🌏</div><h3>International exchange</h3><p>An ongoing student & faculty exchange program with Universitas Negeri Malang, Indonesia.</p><span class="b-more">Explore the partnership →</span></a>
+      <a href="#publications" class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon">📚</div><h3>Research publication</h3><p>A productive faculty with Scopus-indexed studies and global research collaborations.</p><span class="b-more">View publications →</span></a>
+      <a href="#skills" class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon">💪</div><h3>Skill development</h3><p>Hands-on training in sports science, coaching, officiating, fitness testing, dance, and gymnastics — supported by the department's own digital tools.</p><span class="b-more">See skill tracks →</span></a>
+      <a href="#review" class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon">🎯</div><h3>LEPT review preparations</h3><p>A structured, faculty-led review program with mock exams, drills, and mentoring that built the batch's record-setting results.</p><span class="b-more">Inside the review →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- BIOMECHANICS / SCIENCE OF MOVEMENT -->
+<section class="section" id="biomech" aria-labelledby="h-bio">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Know the program</span>
+      <h2 id="h-bio">The <span class="gold">science of movement</span></h2>
+      <p>BPED isn't just sports — it's human movement science. Students learn to read the body in motion: forces, angles, and timing, then turn that knowledge into better teaching and coaching.</p>
+    </div>
+    <div class="biomech-stage reveal">
+      <svg viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Animated biomechanics diagram of a sprinter's motion: stride sequence, projectile path of the center of mass, launch angle, and ground reaction force.">
+        <defs>
+          <marker id="bmArrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f2b705"/></marker>
+          <linearGradient id="bmScanG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f2b705" stop-opacity="0"/><stop offset="50%" stop-color="#f2b705" stop-opacity=".5"/><stop offset="100%" stop-color="#f2b705" stop-opacity="0"/></linearGradient>
+          <radialGradient id="bmDotG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffd95e"/><stop offset="100%" stop-color="#f2b705"/></radialGradient>
+          <g id="bmRunner">
+            <circle cx="-16" cy="-72" r="9" fill="currentColor"/>
+            <path d="M-12,-60 L8,-4" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+            <path d="M-8,-50 L-30,-34" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+            <path d="M-8,-50 L12,-62" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+            <path d="M8,-4 L-16,32" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+            <path d="M-16,32 L-8,60" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+            <path d="M8,-4 L30,26" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+            <path d="M30,26 L26,60" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          </g>
+        </defs>
+        <!-- grid -->
+        <g opacity=".12" stroke="#ffffff" stroke-width="1">
+          <line x1="0" y1="322" x2="820" y2="322"/>
+          <line x1="60" y1="40" x2="60" y2="322"/><line x1="180" y1="40" x2="180" y2="322"/><line x1="300" y1="40" x2="300" y2="322"/><line x1="420" y1="40" x2="420" y2="322"/><line x1="540" y1="40" x2="540" y2="322"/><line x1="660" y1="40" x2="660" y2="322"/><line x1="780" y1="40" x2="780" y2="322"/>
+          <line x1="0" y1="120" x2="820" y2="120"/><line x1="0" y1="220" x2="820" y2="220"/>
+        </g>
+        <!-- COM parabola -->
+        <path id="bmComPath" d="M 120 250 Q 410 70 700 250" fill="none" stroke="#f2b705" stroke-width="2" stroke-dasharray="3 7" opacity=".55"/>
+        <text x="408" y="60" fill="#b3a39c" font-size="13" font-family="'Space Grotesk',sans-serif" text-anchor="middle">center-of-mass trajectory</text>
+        <!-- launch angle -->
+        <line x1="120" y1="322" x2="186" y2="276" stroke="#f2b705" stroke-width="2.5" marker-end="url(#bmArrow)"/>
+        <path d="M 168 322 A 48 48 0 0 0 158 300" fill="none" stroke="#ffd95e" stroke-width="2"/>
+        <text x="176" y="312" fill="#ffd95e" font-size="15" font-family="'Space Grotesk',sans-serif" font-style="italic">θ</text>
+        <text x="150" y="296" fill="#b3a39c" font-size="12" font-family="'Space Grotesk',sans-serif">v</text>
+        <!-- runners: ghost stride sequence -->
+        <g style="color:#f2b705">
+          <use href="#bmRunner" xlink:href="#bmRunner" transform="translate(130,262)" class="bm-ghost" style="animation-delay:0s"/>
+          <use href="#bmRunner" xlink:href="#bmRunner" transform="translate(270,262)" class="bm-ghost" style="animation-delay:.32s"/>
+          <use href="#bmRunner" xlink:href="#bmRunner" transform="translate(410,262)" class="bm-ghost" style="animation-delay:.64s"/>
+          <use href="#bmRunner" xlink:href="#bmRunner" transform="translate(550,262)" class="bm-ghost" style="animation-delay:.96s"/>
+        </g>
+        <!-- lead runner -->
+        <g style="color:#ffd95e"><use href="#bmRunner" xlink:href="#bmRunner" transform="translate(690,262)"/></g>
+        <!-- ground reaction force -->
+        <line class="bm-force" x1="690" y1="322" x2="690" y2="262" stroke="#f2b705" stroke-width="3" marker-end="url(#bmArrow)"/>
+        <text x="700" y="300" fill="#b3a39c" font-size="12" font-family="'Space Grotesk',sans-serif">GRF</text>
+        <!-- joint marker -->
+        <circle cx="698" cy="258" r="4.5" fill="none" stroke="#ffd95e" stroke-width="2"/>
+        <!-- moving COM dot -->
+        <circle r="7" fill="url(#bmDotG)"><animateMotion dur="3s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#bmComPath" xlink:href="#bmComPath"/></animateMotion></circle>
+        <!-- scan line -->
+        <rect class="bm-scan" x="0" y="40" width="40" height="282" fill="url(#bmScanG)"/>
+      </svg>
+      <div class="bm-chips"><span class="bm-chip">Kinematics</span><span class="bm-chip">Kinetics</span><span class="bm-chip">Motor control</span></div>
+    </div>
+    <div class="bm-grid">
+      <div class="bm-pillar reveal"><div class="ic">🦿</div><h4>Biomechanics</h4><p>How forces and levers produce efficient, injury-safe movement.</p></div>
+      <div class="bm-pillar reveal d1"><div class="ic">❤️</div><h4>Exercise physiology</h4><p>How the body adapts to training, fitness, and conditioning.</p></div>
+      <div class="bm-pillar reveal d2"><div class="ic">🧠</div><h4>Motor learning</h4><p>How skills are acquired, refined, and retained over time.</p></div>
+      <div class="bm-pillar reveal d3"><div class="ic">🎓</div><h4>Pedagogy &amp; coaching</h4><p>Turning movement science into great teaching and coaching.</p></div>
     </div>
   </div>
 </section>
@@ -429,6 +586,93 @@ footer{border-top:1px solid var(--line);padding:80px 0 36px;margin-top:40px;posi
   </div>
 </section>
 
+<!-- INTERNATIONAL EXCHANGE -->
+<section class="section" id="exchange" aria-labelledby="h-exch">
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="feat-media">
+        <span class="badge">Universitas Negeri Malang 🇮🇩</span>
+        <div class="ph"><div><span class="big">🌏</span><strong>International Research Exposure</strong><small>images/exchange-research.png</small></div></div>
+        <img src="images/exchange-research.png" alt="BPED faculty and students at the International Research Exposure, Universitas Negeri Malang, Indonesia" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="feat-body">
+        <span class="didyou">Did you know?</span>
+        <div class="um-badge-logo">
+          <img src="images/logo-um.png" alt="Universitas Negeri Malang logo" onerror="this.style.display='none'">
+          <span><b>Universitas Negeri Malang</b><small>Indonesia · partner university</small></span>
+        </div>
+        <h2 id="h-exch">An ongoing <span class="gold">international exchange</span> with Universitas Negeri Malang</h2>
+        <p>The BPED Department maintains an <strong>active international exchange program with Universitas Negeri Malang (UM)</strong> in Indonesia — one of the country's leading universities for education and sports science.</p>
+        <p>Faculty and students take part in <strong>international research exposure</strong> — presenting studies, sharing teaching practices, and building a cross-cultural academic network in physical education.</p>
+        <div class="chips">
+          <span class="chip gold">Student mobility</span>
+          <span class="chip">Faculty exchange</span>
+          <span class="chip">Research exposure</span>
+          <span class="chip">Cross-cultural PE</span>
+          <span class="chip">Global network</span>
+        </div>
+      </div>
+    </div>
+    <div class="wide-media reveal" style="min-height:220px">
+      <div class="ph" style="position:absolute;inset:0;z-index:1;display:grid;place-items:center;text-align:center"><div><span style="font-size:2.4rem">🎓</span><strong style="display:block;color:var(--gold-soft);font-family:var(--grok);margin-top:8px">Excellent research presentations at UM Malang</strong><small style="color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem">images/exchange-congrats.png</small></div></div>
+      <img src="images/exchange-congrats.png" alt="SCOPE congratulations to BPED faculty and exchange students for excellent research presentations at Universitas Negeri Malang" loading="lazy" style="position:relative;z-index:2" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- SKILL DEVELOPMENT -->
+<section class="section" id="skills" aria-labelledby="h-skills">
+  <div class="wrap">
+    <div class="feature rev reveal">
+      <div class="feat-media">
+        <span class="badge">Hands-on training</span>
+        <div class="ph"><div><span class="big">💪</span><strong>Skill Development</strong><small>images/skills.png</small></div></div>
+        <img src="images/skills.png" alt="BPED students in skills training" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="feat-body">
+        <span class="eyebrow">Beyond the classroom</span>
+        <h2 id="h-skills">Practical <span class="gold">skill development</span></h2>
+        <p>BPED graduates leave not only board-ready but <strong>field-ready</strong>. The program blends sports science, pedagogy, and real coaching practice so students can lead in schools, communities, and sports programs.</p>
+        <p>From fitness testing to officiating and movement education, every skill track is reinforced with the department's own digital tools, including <strong>PASAT-G</strong>.</p>
+        <div class="chips">
+          <span class="chip gold">Sports science</span>
+          <span class="chip">Coaching &amp; officiating</span>
+          <span class="chip">Fitness testing</span>
+          <span class="chip">Dance &amp; gymnastics</span>
+          <span class="chip">First aid &amp; safety</span>
+          <span class="chip">Movement education</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEPT REVIEW -->
+<section class="section" id="review" aria-labelledby="h-review">
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="feat-media">
+        <span class="badge">BLEPT MAPEH · PE Majorship Review</span>
+        <div class="ph"><div><span class="big">🎯</span><strong>BLEPT Majorship Review</strong><small>images/review-program.png</small></div></div>
+        <img src="images/review-program.png" alt="BLEPT MAPEH Majorship and PE Majorship Review program" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="feat-body">
+        <span class="eyebrow">The road to the boards</span>
+        <h2 id="h-review">A structured <span class="gold">LEPT review</span> program</h2>
+        <p>The department's record-setting results were no accident. A <strong>faculty-led review program</strong> guided Batch Maragsa from the classroom to licensure with focused, sustained preparation.</p>
+        <p>Built around the three LEPT components — General Education, Professional Education, and the PE Major — the review emphasized early preparation, regular practice, and personal mentoring.</p>
+        <div class="chips">
+          <span class="chip gold">Mock examinations</span>
+          <span class="chip">Drill sessions</span>
+          <span class="chip">Component coaching</span>
+          <span class="chip">Faculty mentoring</span>
+          <span class="chip">Study scheduling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ORGANIZATION -->
 <section class="section" id="organization" aria-labelledby="h-org">
   <div class="wrap">
@@ -478,6 +722,25 @@ footer{border-top:1px solid var(--line);padding:80px 0 36px;margin-top:40px;posi
       <span class="pill">✦ Research Repository</span>
       <h2 id="h-pubs">Scopus-indexed <span class="gold">publications</span></h2>
       <p>The official repository of scientific publications by the BPED Department faculty.</p>
+    </div>
+    <div class="feature reveal" style="margin-bottom:48px">
+      <div class="feat-media">
+        <span class="badge">Editorial Board · Scopus Q3</span>
+        <div class="ph"><div><span class="big">🔬</span><strong>Research Excellence</strong><small>images/research-editorial.png</small></div></div>
+        <img src="images/research-editorial.png" alt="BPED chairperson appointed editorial board member of the Journal of Coaching and Sports Science (Scopus Q3)" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="feat-body">
+        <span class="eyebrow">A research-active department</span>
+        <h2 style="margin-top:8px">Strong in <span class="gold">research publication</span></h2>
+        <p>BPED faculty publish consistently in <strong>Scopus-indexed, peer-reviewed journals</strong> across sports science, pedagogy, and PE innovation — and even serve on <strong>international editorial boards</strong>, such as the Journal of Coaching and Sports Science (JCSS).</p>
+        <p>The department's work extends into <strong>international research collaborations</strong>, including partners such as Universitas Negeri Malang and the University of Portsmouth, United Kingdom.</p>
+        <div class="chips">
+          <span class="chip gold">Scopus-indexed</span>
+          <span class="chip">Sports science</span>
+          <span class="chip">PE innovation</span>
+          <span class="chip">Global collaborations</span>
+        </div>
+      </div>
     </div>
     <div class="scopus-banner reveal">
       <span class="scopus-logo" aria-label="Scopus">Scopus<sup>®</sup></span>
@@ -607,6 +870,11 @@ footer{border-top:1px solid var(--line);padding:80px 0 36px;margin-top:40px;posi
 <footer>
   <div class="foot-huge" aria-hidden="true">BPED</div>
   <div class="wrap foot-info">
+    <div class="logo-strip" style="margin:0 auto 28px">
+      <img src="images/logo-msu.png" alt="Mindanao State University – General Santos" onerror="this.style.display='none'">
+      <img src="images/logo-bped.png" alt="Bachelor of Physical Education" onerror="this.style.display='none'">
+      <img src="images/logo-um.png" alt="Universitas Negeri Malang" onerror="this.style.display='none'">
+    </div>
     <p class="uni">Mindanao State University – General Santos City</p>
     <p class="motto">fostering excellence</p>
     <p>College of Education · Bachelor of Physical Education Program · Batch Maragsa (Pioneering Batch)</p>
