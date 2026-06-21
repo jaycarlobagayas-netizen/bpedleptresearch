@@ -462,6 +462,30 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
 .tf-point h4{font-family:var(--grok);font-weight:600;color:#fff;font-size:1.02rem;margin-bottom:3px}
 .tf-point p{color:var(--muted);font-size:.9rem}
 @media(max-width:860px){.txt-feature{grid-template-columns:1fr;gap:26px}}
+/* ===== RESEARCH / DATA ANIMATION (hero backdrop) ===== */
+.dataviz{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;opacity:.5;
+  -webkit-mask-image:radial-gradient(135% 120% at 50% 34%,#000 32%,transparent 86%);
+          mask-image:radial-gradient(135% 120% at 50% 34%,#000 32%,transparent 86%)}
+.dataviz svg{width:100%;height:100%;display:block}
+.dv-grid line{stroke:rgba(255,255,255,.045);stroke-width:1}
+.dv-link{stroke:rgba(242,183,5,.16);stroke-width:1;fill:none}
+.dv-flow{stroke:none;fill:none}
+.dv-node{fill:var(--gold)}
+.dv-node.maroon{fill:var(--maroon-bright)}
+.dv-pulse,.dv-bar,.dv-pt,.dv-area,.dv-trace{transform-box:fill-box}
+.dv-pulse{transform-origin:center;animation:dvPulse 3.2s ease-in-out infinite}
+@keyframes dvPulse{0%,100%{opacity:.4;transform:scale(.65)}50%{opacity:1;transform:scale(1)}}
+.dv-bar{fill:rgba(165,35,56,.45);transform-origin:bottom;animation:dvBar 4.6s ease-in-out infinite}
+@keyframes dvBar{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
+.dv-area{fill:url(#dvArea);opacity:0;animation:dvArea 7s ease-in-out infinite}
+@keyframes dvArea{0%,22%{opacity:0}58%{opacity:.6}88%{opacity:.6}100%{opacity:0}}
+.dv-trace{fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1700;stroke-dashoffset:1700;animation:dvTrace 7s ease-in-out infinite}
+@keyframes dvTrace{0%{stroke-dashoffset:1700}50%{stroke-dashoffset:0}88%{stroke-dashoffset:0}100%{stroke-dashoffset:-1700}}
+.dv-pt{fill:var(--gold-soft);opacity:0;transform-origin:center;animation:dvPt 7s ease-in-out infinite}
+@keyframes dvPt{0%{opacity:0;transform:scale(0)}8%{opacity:1;transform:scale(1)}82%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.3)}}
+@media(prefers-reduced-motion:reduce){.dataviz *{animation:none!important}.dv-trace{stroke-dashoffset:0}.dv-pt,.dv-area{opacity:.55}}
+@media(max-width:680px){.dataviz{opacity:.38}}
 </style>
 </head>
 <body>
@@ -530,6 +554,57 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
 <!-- HERO -->
 <section class="hero">
   <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+  <div class="dataviz" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <linearGradient id="dvArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f2b705" stop-opacity=".34"/><stop offset="100%" stop-color="#f2b705" stop-opacity="0"/></linearGradient>
+      </defs>
+      <g class="dv-grid">
+        <line x1="0" y1="150" x2="1200" y2="150"/><line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="450" x2="1200" y2="450"/>
+        <line x1="300" y1="0" x2="300" y2="600"/><line x1="600" y1="0" x2="600" y2="600"/><line x1="900" y1="0" x2="900" y2="600"/>
+      </g>
+      <g>
+        <line class="dv-link" x1="170" y1="180" x2="350" y2="300"/><line class="dv-link" x1="350" y1="300" x2="540" y2="150"/>
+        <line class="dv-link" x1="540" y1="150" x2="720" y2="270"/><line class="dv-link" x1="720" y1="270" x2="900" y2="170"/>
+        <line class="dv-link" x1="900" y1="170" x2="1010" y2="370"/><line class="dv-link" x1="350" y1="300" x2="300" y2="470"/>
+        <line class="dv-link" x1="720" y1="270" x2="660" y2="450"/><line class="dv-link" x1="300" y1="470" x2="660" y2="450"/>
+        <line class="dv-link" x1="540" y1="150" x2="900" y2="170"/>
+      </g>
+      <path id="dvf1" class="dv-flow" d="M170,180 Q280,210 350,300"/>
+      <path id="dvf2" class="dv-flow" d="M540,150 Q650,190 720,270"/>
+      <path id="dvf3" class="dv-flow" d="M720,270 Q830,200 900,170"/>
+      <path id="dvf4" class="dv-flow" d="M350,300 Q300,390 300,470"/>
+      <circle r="2.6" fill="#ffd95e"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#dvf1" xlink:href="#dvf1"/></animateMotion></circle>
+      <circle r="2.6" fill="#ffd95e"><animateMotion dur="5s" begin="-1s" repeatCount="indefinite"><mpath href="#dvf2" xlink:href="#dvf2"/></animateMotion></circle>
+      <circle r="2.6" fill="#ffd95e"><animateMotion dur="4.5s" begin="-2s" repeatCount="indefinite"><mpath href="#dvf3" xlink:href="#dvf3"/></animateMotion></circle>
+      <circle r="2.4" fill="#ffd95e"><animateMotion dur="5.5s" begin="-1.5s" repeatCount="indefinite"><mpath href="#dvf4" xlink:href="#dvf4"/></animateMotion></circle>
+      <g>
+        <circle class="dv-node maroon dv-pulse" cx="170" cy="180" r="5" style="animation-delay:0s"/>
+        <circle class="dv-node dv-pulse" cx="350" cy="300" r="5" style="animation-delay:.4s"/>
+        <circle class="dv-node dv-pulse" cx="540" cy="150" r="5" style="animation-delay:.8s"/>
+        <circle class="dv-node maroon dv-pulse" cx="720" cy="270" r="5" style="animation-delay:1.2s"/>
+        <circle class="dv-node dv-pulse" cx="900" cy="170" r="5" style="animation-delay:1.6s"/>
+        <circle class="dv-node dv-pulse" cx="1010" cy="370" r="5" style="animation-delay:2s"/>
+        <circle class="dv-node dv-pulse" cx="300" cy="470" r="5" style="animation-delay:2.4s"/>
+        <circle class="dv-node maroon dv-pulse" cx="660" cy="450" r="5" style="animation-delay:2.8s"/>
+      </g>
+      <g>
+        <rect class="dv-bar" x="70" y="110" width="14" height="80" rx="2" style="animation-delay:0s"/>
+        <rect class="dv-bar" x="92" y="90" width="14" height="100" rx="2" style="animation-delay:.3s"/>
+        <rect class="dv-bar" x="114" y="130" width="14" height="60" rx="2" style="animation-delay:.6s"/>
+        <rect class="dv-bar" x="136" y="70" width="14" height="120" rx="2" style="animation-delay:.9s"/>
+      </g>
+      <path class="dv-area" d="M110,500 L250,455 L380,485 L510,410 L640,440 L770,360 L900,395 L1030,330 L1150,370 L1150,560 L110,560 Z"/>
+      <polyline class="dv-trace" points="110,500 250,455 380,485 510,410 640,440 770,360 900,395 1030,330 1150,370"/>
+      <g>
+        <circle class="dv-pt" cx="110" cy="500" r="4" style="animation-delay:0s"/><circle class="dv-pt" cx="250" cy="455" r="4" style="animation-delay:.35s"/>
+        <circle class="dv-pt" cx="380" cy="485" r="4" style="animation-delay:.7s"/><circle class="dv-pt" cx="510" cy="410" r="4" style="animation-delay:1.05s"/>
+        <circle class="dv-pt" cx="640" cy="440" r="4" style="animation-delay:1.4s"/><circle class="dv-pt" cx="770" cy="360" r="4" style="animation-delay:1.75s"/>
+        <circle class="dv-pt" cx="900" cy="395" r="4" style="animation-delay:2.1s"/><circle class="dv-pt" cx="1030" cy="330" r="4" style="animation-delay:2.45s"/>
+        <circle class="dv-pt" cx="1150" cy="370" r="4" style="animation-delay:2.8s"/>
+      </g>
+    </svg>
+  </div>
   <div class="wrap hero-inner">
     <span class="pill reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Bachelor of Physical Education · MSU – General Santos</span>
     <h1>
