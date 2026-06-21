@@ -398,9 +398,91 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 .er span{font-size:.8rem;color:#e9d4bf}
 @media(max-width:860px){.enroll-grid{grid-template-columns:1fr;gap:26px}}
 @media(max-width:460px){.enroll-reasons{grid-template-columns:1fr}}
+/* ===== ICONS (modern outline SVG) ===== */
+.ico{width:1em;height:1em;display:inline-block;vertical-align:-0.14em;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.pill .ico{width:13px;height:13px;vertical-align:-1px;stroke-width:2.1}
+.b-icon{color:var(--gold-soft)}
+.b-icon .ico{width:27px;height:27px;stroke-width:1.8;stroke:url(#icoGrad)}
+.bm-pillar .ic{color:var(--gold-soft);line-height:0}
+.bm-pillar .ic .ico{width:30px;height:30px;stroke:url(#icoGrad);stroke-width:1.7}
+.bm-panel h4 .ico,.card h3 .ico,.innov-body .ico{color:var(--gold)}
+.er .ic{color:var(--gold-soft);line-height:0}
+.er .ic .ico{width:27px;height:27px;stroke:url(#icoGrad)}
+.sv .ico{width:18px;height:18px;color:var(--gold-soft)}
+.feat-media .ph .big .ico{width:52px;height:52px;stroke:url(#icoGrad)}
+.bm-launch .ico{width:16px;height:16px;vertical-align:-2px}
+.privacy .ico{color:var(--gold-soft);width:15px;height:15px}
+/* ===== GRADIENT / GLASS POLISH ===== */
+:root{--glass:rgba(22,15,18,.55);--glass-brd:rgba(255,255,255,.10)}
+.b-card,.notch,.card,.pub-card,.bm-pillar,.scopus-banner,.fb-card{
+  background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015)),linear-gradient(180deg,rgba(26,18,20,.72),rgba(19,13,15,.64));
+  -webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+.b-icon{background:linear-gradient(150deg,rgba(242,183,5,.22),rgba(165,35,56,.20));border-color:rgba(242,183,5,.32)}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(900px 620px at 6% -4%,rgba(165,35,56,.16),transparent 55%),radial-gradient(820px 560px at 100% 10%,rgba(242,183,5,.08),transparent 55%),radial-gradient(760px 760px at 52% 108%,rgba(120,40,92,.14),transparent 60%)}
+.aurora{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.aurora span{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+.aurora .a1{width:520px;height:520px;background:radial-gradient(circle,rgba(165,35,56,.45),transparent 65%);top:-160px;left:-120px;animation:auroraA 24s ease-in-out infinite}
+.aurora .a2{width:460px;height:460px;background:radial-gradient(circle,rgba(242,183,5,.20),transparent 65%);bottom:-180px;right:-100px;animation:auroraB 30s ease-in-out infinite}
+.aurora .a3{width:380px;height:380px;background:radial-gradient(circle,rgba(120,40,90,.30),transparent 65%);top:30%;left:55%;animation:auroraA 27s ease-in-out infinite reverse}
+@keyframes auroraA{50%{transform:translate(70px,50px) scale(1.12)}}
+@keyframes auroraB{50%{transform:translate(-60px,-40px) scale(1.1)}}
+@media(prefers-reduced-motion:reduce){.aurora span{animation:none}}
+/* ===== GLOBAL PARTNERS ===== */
+.partners-wrap{margin-top:30px;position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-gold);
+  background:linear-gradient(135deg,rgba(165,35,56,.16),rgba(10,6,8,.4) 45%,rgba(242,183,5,.10));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:30px}
+.partners-head{display:flex;align-items:center;gap:10px;color:var(--gold-soft);font-family:var(--grok);font-weight:600;font-size:1.05rem;margin-bottom:6px}
+.partners-head .ico{width:22px;height:22px;color:var(--gold)}
+.partners-sub{color:var(--muted);font-size:.92rem;margin-bottom:20px;max-width:680px}
+.partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.partner{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:18px 20px;transition:border-color .3s,transform .3s}
+.partner:hover{border-color:var(--line-gold);transform:translateY(-4px)}
+.partner .crest{width:62px;height:62px;border-radius:14px;flex:none;display:grid;place-items:center;background:#fff;overflow:hidden}
+.partner .crest img{width:100%;height:100%;object-fit:contain;padding:5px}
+.partner .crest.ph2{background:linear-gradient(150deg,#0b132b,#1c2541);color:var(--gold-soft)}
+.partner .crest.ph2 .ico{width:30px;height:30px}
+.partner h4{font-family:var(--grok);font-weight:600;color:#fff;font-size:1.02rem;line-height:1.2}
+.partner .role{font-size:.74rem;color:var(--gold-deep);letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:3px}
+.partner p{font-size:.84rem;color:var(--muted);margin-top:6px}
+.partner .flag{font-size:.95rem}
+@media(max-width:760px){.partner-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="icoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffe39a"/><stop offset="55%" stop-color="#f2b705"/><stop offset="100%" stop-color="#e9711c"/></linearGradient>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.6a2 2 0 0 0 1.5 1.3L21 11l-4.6 1.1a2 2 0 0 0-1.5 1.3L13 19l-1.9-5.6a2 2 0 0 0-1.5-1.3L5 11l4.6-1.1a2 2 0 0 0 1.5-1.3z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+    <symbol id="i-medal" viewBox="0 0 24 24"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></symbol>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
+  </defs>
+</svg>
 <a class="skip-link" href="#main">Skip to main content</a>
 <div class="progress" id="progress"></div>
 <div class="cursor" id="cursor" aria-hidden="true"></div>
@@ -431,10 +513,9 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 
 <!-- HERO -->
 <section class="hero">
-  <span class="blob b1"></span>
-  <span class="blob b2"></span>
+  <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
   <div class="wrap hero-inner">
-    <span class="pill reveal">✒ Fostering Excellence · March 2026 LEPT</span>
+    <span class="pill reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-medal" xlink:href="#i-medal"/></svg> Fostering Excellence · March 2026 LEPT</span>
     <h1>
       <span class="mask-line"><span>A Historic <span class="gold">100% Passing Rate</span></span></span>
       <span class="mask-line"><span>for the Pioneering BPED Batch</span></span>
@@ -454,9 +535,8 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="logo-strip reveal d4">
       <img src="images/logo-msu.png" alt="Mindanao State University – General Santos" onerror="this.style.display='none'">
       <img src="images/logo-bped.png" alt="Bachelor of Physical Education" onerror="this.style.display='none'">
-      <img src="images/logo-um.png" alt="Universitas Negeri Malang" onerror="this.style.display='none'">
     </div>
-    <span class="logo-cap reveal d4">Mindanao State University – GenSan · College of Education · Bachelor of Physical Education · in partnership with Universitas Negeri Malang</span>
+    <span class="logo-cap reveal d4">Mindanao State University – General Santos · College of Education · Bachelor of Physical Education</span>
   </div>
 </section>
 
@@ -484,18 +564,18 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="highlights" aria-labelledby="h-highlights" style="padding-top:30px">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ At a Glance</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> At a Glance</span>
       <h2 id="h-highlights">Key insights from the <span class="gold">tracer study</span></h2>
       <p>Aggregated from the official BPED BLEPT tracer survey of all 53 first-batch takers (Class of 2025).</p>
     </div>
     <div class="bento">
-      <div class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon">🏆</div><h3>Perfect first-take record</h3><p>All 53 graduates passed the LEPT on their first attempt — a 100% institutional passing rate for the pioneer batch.</p></div>
-      <div class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon">🎖️</div><h3>9 national top notchers</h3><p>Nine passers landed in the Top 5 to Top 10 nationwide, led by a Top 5 finish with a 94.20% overall rating.</p></div>
-      <div class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon">🥇</div><h3>49% with Latin honors</h3><p>24 Cum Laude and 2 Magna Cum Laude — strong academic foundations before the board exam.</p></div>
-      <div class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon">💪</div><h3>Majors were the strength</h3><p>The batch averaged 94.58% in the PE Major area — highest of the three exam components.</p></div>
-      <div class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon">📚</div><h3>Prof. Ed. the challenge</h3><p>87% identified Professional Education as the hardest area, matching its lowest mean of 87.31%.</p></div>
-      <div class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon">⏱️</div><h3>Preparation pays off</h3><p>72% prepared for 4–6 months, and 60% studied at least 3–5 times a week, up to daily.</p></div>
-      <div class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon">📈</div><h3>Consistent excellence</h3><p>Overall ratings ranged from 84.6% to 94.2%, with a median of 91.5% across the batch.</p></div>
+      <div class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trophy" xlink:href="#i-trophy"/></svg></div><h3>Perfect first-take record</h3><p>All 53 graduates passed the LEPT on their first attempt — a 100% institutional passing rate for the pioneer batch.</p></div>
+      <div class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-medal" xlink:href="#i-medal"/></svg></div><h3>9 national top notchers</h3><p>Nine passers landed in the Top 5 to Top 10 nationwide, led by a Top 5 finish with a 94.20% overall rating.</p></div>
+      <div class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-medal" xlink:href="#i-medal"/></svg></div><h3>49% with Latin honors</h3><p>24 Cum Laude and 2 Magna Cum Laude — strong academic foundations before the board exam.</p></div>
+      <div class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-dumbbell" xlink:href="#i-dumbbell"/></svg></div><h3>Majors were the strength</h3><p>The batch averaged 94.58% in the PE Major area — highest of the three exam components.</p></div>
+      <div class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book" xlink:href="#i-book"/></svg></div><h3>Prof. Ed. the challenge</h3><p>87% identified Professional Education as the hardest area, matching its lowest mean of 87.31%.</p></div>
+      <div class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock" xlink:href="#i-clock"/></svg></div><h3>Preparation pays off</h3><p>72% prepared for 4–6 months, and 60% studied at least 3–5 times a week, up to daily.</p></div>
+      <div class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trend" xlink:href="#i-trend"/></svg></div><h3>Consistent excellence</h3><p>Overall ratings ranged from 84.6% to 94.2%, with a median of 91.5% across the batch.</p></div>
     </div>
   </div>
 </section>
@@ -504,16 +584,16 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="strengths" aria-labelledby="h-str" style="padding-top:30px">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Why BPED MSU–GenSan</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Why BPED MSU–GenSan</span>
       <h2 id="h-str">A department built for <span class="gold">excellence</span></h2>
       <p>Five pillars that make the Bachelor of Physical Education program a benchmark in Mindanao and beyond.</p>
     </div>
     <div class="bento">
-      <a href="#topnotchers" class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon">🏆</div><h3>100% LEPT passing</h3><p>A perfect first-take board record with 9 national top notchers — proof of academic rigor.</p><span class="b-more">See the achievers →</span></a>
-      <a href="#exchange" class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon">🌏</div><h3>International exchange</h3><p>An ongoing student & faculty exchange program with Universitas Negeri Malang, Indonesia.</p><span class="b-more">Explore the partnership →</span></a>
-      <a href="#publications" class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon">📚</div><h3>Research publication</h3><p>A productive faculty with Scopus-indexed studies and global research collaborations.</p><span class="b-more">View publications →</span></a>
-      <a href="#skills" class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon">💪</div><h3>Skill development</h3><p>Hands-on training in sports science, coaching, officiating, fitness testing, dance, and gymnastics — supported by the department's own digital tools.</p><span class="b-more">See skill tracks →</span></a>
-      <a href="#review" class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon">🎯</div><h3>LEPT review preparations</h3><p>A structured, faculty-led review program with mock exams, drills, and mentoring that built the batch's record-setting results.</p><span class="b-more">Inside the review →</span></a>
+      <a href="#topnotchers" class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trophy" xlink:href="#i-trophy"/></svg></div><h3>100% LEPT passing</h3><p>A perfect first-take board record with 9 national top notchers — proof of academic rigor.</p><span class="b-more">See the achievers →</span></a>
+      <a href="#exchange" class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe" xlink:href="#i-globe"/></svg></div><h3>International exchange</h3><p>An ongoing student & faculty exchange program with Universitas Negeri Malang, Indonesia.</p><span class="b-more">Explore the partnership →</span></a>
+      <a href="#publications" class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book" xlink:href="#i-book"/></svg></div><h3>Research publication</h3><p>A productive faculty with Scopus-indexed studies and global research collaborations.</p><span class="b-more">View publications →</span></a>
+      <a href="#skills" class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-dumbbell" xlink:href="#i-dumbbell"/></svg></div><h3>Skill development</h3><p>Hands-on training in sports science, coaching, officiating, fitness testing, dance, and gymnastics — supported by the department's own digital tools.</p><span class="b-more">See skill tracks →</span></a>
+      <a href="#review" class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target" xlink:href="#i-target"/></svg></div><h3>LEPT review preparations</h3><p>A structured, faculty-led review program with mock exams, drills, and mentoring that built the batch's record-setting results.</p><span class="b-more">Inside the review →</span></a>
     </div>
   </div>
 </section>
@@ -522,7 +602,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="biomech" aria-labelledby="h-bio">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Know the program</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Know the program</span>
       <h2 id="h-bio">The <span class="gold">science of movement</span></h2>
       <p>BPED isn't just sports — it's human movement science. Students learn to read the body in motion: forces, angles, and timing, then turn that knowledge into better teaching and coaching.</p>
     </div>
@@ -579,10 +659,10 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
       <div class="bm-chips"><span class="bm-chip">Kinematics</span><span class="bm-chip">Kinetics</span><span class="bm-chip">Motor control</span></div>
     </div>
     <div class="bm-grid">
-      <div class="bm-pillar reveal"><div class="ic">🦿</div><h4>Biomechanics</h4><p>How forces and levers produce efficient, injury-safe movement.</p></div>
-      <div class="bm-pillar reveal d1"><div class="ic">❤️</div><h4>Exercise physiology</h4><p>How the body adapts to training, fitness, and conditioning.</p></div>
-      <div class="bm-pillar reveal d2"><div class="ic">🧠</div><h4>Motor learning</h4><p>How skills are acquired, refined, and retained over time.</p></div>
-      <div class="bm-pillar reveal d3"><div class="ic">🎓</div><h4>Pedagogy &amp; coaching</h4><p>Turning movement science into great teaching and coaching.</p></div>
+      <div class="bm-pillar reveal"><div class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-activity" xlink:href="#i-activity"/></svg></div><h4>Biomechanics</h4><p>How forces and levers produce efficient, injury-safe movement.</p></div>
+      <div class="bm-pillar reveal d1"><div class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-heart" xlink:href="#i-heart"/></svg></div><h4>Exercise physiology</h4><p>How the body adapts to training, fitness, and conditioning.</p></div>
+      <div class="bm-pillar reveal d2"><div class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bulb" xlink:href="#i-bulb"/></svg></div><h4>Motor learning</h4><p>How skills are acquired, refined, and retained over time.</p></div>
+      <div class="bm-pillar reveal d3"><div class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cap" xlink:href="#i-cap"/></svg></div><h4>Pedagogy &amp; coaching</h4><p>Turning movement science into great teaching and coaching.</p></div>
     </div>
 
     <!-- INTERACTIVE PROJECTILE LAB -->
@@ -626,7 +706,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
         </svg>
       </div>
       <div class="bm-panel">
-        <h4>🎯 Projectile lab</h4>
+        <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target" xlink:href="#i-target"/></svg> Projectile lab</h4>
         <p class="lead">Every jump, throw, and kick in PE is projectile motion. Drag the sliders to see how launch angle and speed reshape the path — the same analysis a coach makes for a long jump or a shot put.</p>
         <div class="bm-ctrl">
           <label>Launch angle <b><span id="bmAngleV">45</span>°</b></label>
@@ -640,7 +720,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
           <div class="stat"><div class="v" id="bmTimeV">0 s</div><div class="k">Flight time</div></div>
           <div class="stat"><div class="v" id="bmOptV">45°</div><div class="k">Best for range</div></div>
         </div>
-        <button class="bm-launch" id="bmGo" type="button">▶ Launch</button>
+        <button class="bm-launch" id="bmGo" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play" xlink:href="#i-play"/></svg> Launch</button>
         <p class="bm-hint">Tip: on flat ground the <b>longest range</b> comes from a <span class="bm-opt">45° launch</span> — pure biomechanics.</p>
       </div>
     </div>
@@ -704,7 +784,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="topnotchers" aria-labelledby="h-notch">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Hall of Fame</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Hall of Fame</span>
       <h2 id="h-notch">The 9 national <span class="gold">top notchers</span></h2>
       <p>March 2026 LEPT – Secondary Level (Physical Education), as published by the Professional Regulation Commission.</p>
     </div>
@@ -716,12 +796,12 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="performance" aria-labelledby="h-perf">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Exam Performance</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Exam Performance</span>
       <h2 id="h-perf">Rating <span class="gold">analytics</span></h2>
       <p>Mean performance across the three LEPT components and the distribution of overall ratings.</p>
     </div>
     <div class="card reveal">
-      <h3>📊 Mean ratings by component</h3>
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chart" xlink:href="#i-chart"/></svg> Mean ratings by component</h3>
       <div class="rate-row"><div class="top"><span>General Education</span><span>91.31%</span></div><div class="bar"><span data-w="91.31"></span></div><p class="minmax">Range: 78% – 95% · Median 91%</p></div>
       <div class="rate-row"><div class="top"><span>Professional Education</span><span>87.31%</span></div><div class="bar"><span data-w="87.31"></span></div><p class="minmax">Range: 77% – 93% · Median 88%</p></div>
       <div class="rate-row"><div class="top"><span>Major (Physical Education)</span><span>94.58%</span></div><div class="bar"><span data-w="94.58"></span></div><p class="minmax">Range: 92% – 96% · Median 95%</p></div>
@@ -746,7 +826,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="achievements" aria-labelledby="h-achv">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Beyond the Boards</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Beyond the Boards</span>
       <h2 id="h-achv">Extracurricular <span class="gold">achievements</span></h2>
       <p>BPED honorees of the Graduating Class of AY 2024–2025, per MSU–General Santos University Memorandum No. 031-25C (June 18, 2025).</p>
     </div>
@@ -764,7 +844,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="feature reveal">
       <div class="feat-media">
         <span class="badge">Universitas Negeri Malang 🇮🇩</span>
-        <div class="ph"><div><span class="big">🌏</span><strong>International Research Exposure</strong><small>images/exchange-research.jpg</small></div></div>
+        <div class="ph"><div><span class="big"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe" xlink:href="#i-globe"/></svg></span><strong>International Research Exposure</strong><small>images/exchange-research.jpg</small></div></div>
         <img src="images/exchange-research.jpg" alt="BPED faculty and students at the International Research Exposure, Universitas Negeri Malang, Indonesia" loading="lazy" onerror="this.style.display='none'">
       </div>
       <div class="feat-body">
@@ -786,7 +866,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
       </div>
     </div>
     <div class="wide-media reveal" style="min-height:220px">
-      <div class="ph" style="position:absolute;inset:0;z-index:1;display:grid;place-items:center;text-align:center"><div><span style="font-size:2.4rem">🎓</span><strong style="display:block;color:var(--gold-soft);font-family:var(--grok);margin-top:8px">Excellent research presentations at UM Malang</strong><small style="color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem">images/exchange-congrats.jpg</small></div></div>
+      <div class="ph" style="position:absolute;inset:0;z-index:1;display:grid;place-items:center;text-align:center"><div><span style="font-size:2.4rem"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cap" xlink:href="#i-cap"/></svg></span><strong style="display:block;color:var(--gold-soft);font-family:var(--grok);margin-top:8px">Excellent research presentations at UM Malang</strong><small style="color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem">images/exchange-congrats.jpg</small></div></div>
       <img src="images/exchange-congrats.jpg" alt="SCOPE congratulations to BPED faculty and exchange students for excellent research presentations at Universitas Negeri Malang" loading="lazy" style="position:relative;z-index:2" onerror="this.style.display='none'">
     </div>
   </div>
@@ -799,9 +879,9 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
       <div class="feat-media">
         <span class="badge">Hands-on training</span>
         <div class="skill-visual" role="img" aria-label="Skill tracks in the BPED program: sports science, coaching, fitness testing, gymnastics, dance, first aid, and officiating.">
-          <div class="sv-row"><span class="sv"><span class="e">🏃</span>Sports science</span><span class="sv"><span class="e">📋</span>Coaching</span></div>
-          <div class="sv-row b"><span class="sv"><span class="e">🧪</span>Fitness testing</span><span class="sv"><span class="e">🤸</span>Gymnastics</span></div>
-          <div class="sv-row"><span class="sv"><span class="e">💃</span>Dance</span><span class="sv"><span class="e">🩹</span>First aid</span><span class="sv"><span class="e">⚖️</span>Officiating</span></div>
+          <div class="sv-row"><span class="sv"><span class="e"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-activity" xlink:href="#i-activity"/></svg></span>Sports science</span><span class="sv"><span class="e"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clipboard" xlink:href="#i-clipboard"/></svg></span>Coaching</span></div>
+          <div class="sv-row b"><span class="sv"><span class="e"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask" xlink:href="#i-flask"/></svg></span>Fitness testing</span><span class="sv"><span class="e"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-person" xlink:href="#i-person"/></svg></span>Gymnastics</span></div>
+          <div class="sv-row"><span class="sv"><span class="e"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-music" xlink:href="#i-music"/></svg></span>Dance</span><span class="sv"><span class="e"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-plus" xlink:href="#i-plus"/></svg></span>First aid</span><span class="sv"><span class="e"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scale" xlink:href="#i-scale"/></svg></span>Officiating</span></div>
         </div>
       </div>
       <div class="feat-body">
@@ -828,7 +908,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="feature reveal">
       <div class="feat-media">
         <span class="badge">BLEPT MAPEH · PE Majorship Review</span>
-        <div class="ph"><div><span class="big">🎯</span><strong>BLEPT Majorship Review</strong><small>images/review-program.jpg</small></div></div>
+        <div class="ph"><div><span class="big"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-target" xlink:href="#i-target"/></svg></span><strong>BLEPT Majorship Review</strong><small>images/review-program.jpg</small></div></div>
         <img src="images/review-program.jpg" alt="BLEPT MAPEH Majorship and PE Majorship Review program" loading="lazy" onerror="this.style.display='none'">
       </div>
       <div class="feat-body">
@@ -852,7 +932,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="organization" aria-labelledby="h-org">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ College of Education</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> College of Education</span>
       <h2 id="h-org">Organizational <span class="gold">structure</span></h2>
       <p>Leadership of MSU–General Santos and the Bachelor of Physical Education Department.</p>
     </div>
@@ -868,7 +948,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
       <div class="org-card lead" role="listitem"><div class="org-ava" aria-hidden="true">JB</div><h3>Jay Carlo S. Bagayas, MSPE</h3><p class="org-role">Chairperson, Bachelor of Physical Education</p></div>
     </div>
     <div class="card reveal" style="margin-top:1.8rem">
-      <h3>👥 BPED Department Faculty</h3>
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-users" xlink:href="#i-users"/></svg> BPED Department Faculty</h3>
       <ul class="faculty-grid">
         <li>Mussar A. Salamat, MSPE <small>SPE Coordinator</small></li>
         <li>Reymart J. Canja, MSPE</li>
@@ -894,26 +974,50 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="publications" aria-labelledby="h-pubs">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Research Repository</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Research Repository</span>
       <h2 id="h-pubs">Scopus-indexed <span class="gold">publications</span></h2>
       <p>The official repository of scientific publications by the BPED Department faculty.</p>
     </div>
     <div class="feature reveal" style="margin-bottom:48px">
       <div class="feat-media">
         <span class="badge">Editorial Board · Scopus Q3</span>
-        <div class="ph"><div><span class="big">🔬</span><strong>Research Excellence</strong><small>images/research-editorial.jpg</small></div></div>
+        <div class="ph"><div><span class="big"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask" xlink:href="#i-flask"/></svg></span><strong>Research Excellence</strong><small>images/research-editorial.jpg</small></div></div>
         <img src="images/research-editorial.jpg" alt="BPED chairperson appointed editorial board member of the Journal of Coaching and Sports Science (Scopus Q3)" loading="lazy" onerror="this.style.display='none'">
       </div>
       <div class="feat-body">
         <span class="eyebrow">A research-active department</span>
         <h2 style="margin-top:8px">Strong in <span class="gold">research publication</span></h2>
         <p>BPED faculty publish consistently in <strong>Scopus-indexed, peer-reviewed journals</strong> across sports science, pedagogy, and PE innovation — and even serve on <strong>international editorial boards</strong>, such as the Journal of Coaching and Sports Science (JCSS).</p>
-        <p>The department's work extends into <strong>international research collaborations</strong>, including partners such as Universitas Negeri Malang and the University of Portsmouth, United Kingdom.</p>
+        <p>The department's work extends into <strong>international research collaborations</strong> with leading universities abroad.</p>
         <div class="chips">
           <span class="chip gold">Scopus-indexed</span>
           <span class="chip">Sports science</span>
           <span class="chip">PE innovation</span>
           <span class="chip">Global collaborations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GLOBAL RESEARCH COLLABORATIONS -->
+    <div class="partners-wrap reveal">
+      <div class="partners-head"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-handshake" xlink:href="#i-handshake"/></svg> Global research collaborations</div>
+      <p class="partners-sub">The BPED Department actively collaborates with leading universities abroad on research, exchange, and publication.</p>
+      <div class="partner-grid">
+        <div class="partner">
+          <span class="crest"><img src="images/logo-um.png" alt="Universitas Negeri Malang logo" onerror="this.parentNode.classList.add('ph2');this.parentNode.innerHTML='&lt;svg class=&quot;ico&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;use href=&quot;#i-cap&quot;/&gt;&lt;/svg&gt;'"></span>
+          <div>
+            <h4>Universitas Negeri Malang <span class="flag">🇮🇩</span></h4>
+            <p class="role">Partner University · Indonesia</p>
+            <p>Student &amp; faculty exchange and international research exposure in physical education and sports science.</p>
+          </div>
+        </div>
+        <div class="partner">
+          <span class="crest ph2"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-landmark" xlink:href="#i-landmark"/></svg></span>
+          <div>
+            <h4>University of Portsmouth <span class="flag">🇬🇧</span></h4>
+            <p class="role">Research Collaboration · United Kingdom</p>
+            <p>International research collaboration advancing sports science and physical education scholarship.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -936,7 +1040,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="updates" aria-labelledby="h-updates">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Latest from the Community</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Latest from the Community</span>
       <h2 id="h-updates">Updates from <span class="gold">SCOPE MSU GenSan</span></h2>
       <p>Live posts from the official Facebook page of the SCOPE student organization, MSU – General Santos.</p>
     </div>
@@ -980,11 +1084,11 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="innovation" aria-labelledby="h-innov">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Department Innovation</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Department Innovation</span>
       <h2 id="h-innov">Digital <span class="gold">innovation</span></h2>
     </div>
     <div class="innov-card reveal">
-      <div class="innov-icon" aria-hidden="true">🚀</div>
+      <div class="innov-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-rocket" xlink:href="#i-rocket"/></svg></div>
       <div class="innov-body">
         <h3>PASAT-G</h3>
         <p>A web-based application developed by the BPED Department of MSU–General Santos — an innovative digital platform supporting physical education instruction and assessment.</p>
@@ -998,7 +1102,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="voices" aria-labelledby="h-voices">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ Voices of the Batch</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Voices of the Batch</span>
       <h2 id="h-voices">Advice for future <span class="gold">LEPT takers</span></h2>
       <p>Anonymized words of wisdom from the passers themselves.</p>
     </div>
@@ -1020,7 +1124,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="enroll-wrap reveal">
       <div class="enroll-grid">
         <div class="enroll-lead">
-          <span class="pill">✦ Future Educators, Start Here</span>
+          <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> Future Educators, Start Here</span>
           <h2 id="h-enroll">Become the next <span class="gold">national top notcher</span></h2>
           <p>Study the Bachelor of Physical Education at MSU – General Santos — the program behind a <strong>100% first-take LEPT passing rate</strong>, 9 national top notchers, Scopus-indexed research, and an international exchange with Universitas Negeri Malang. Turn your passion for sport and movement into a licensed teaching career.</p>
           <div class="enroll-actions">
@@ -1029,10 +1133,10 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
           </div>
         </div>
         <div class="enroll-reasons" role="list">
-          <div class="er" role="listitem"><div class="ic">🏆</div><b>100%</b><span>First-take LEPT passing rate</span></div>
-          <div class="er" role="listitem"><div class="ic">🎖️</div><b>9</b><span>National top notchers</span></div>
-          <div class="er" role="listitem"><div class="ic">🌏</div><b>Global</b><span>Exchange with UM, Indonesia</span></div>
-          <div class="er" role="listitem"><div class="ic">📚</div><b>Scopus</b><span>Research-active faculty</span></div>
+          <div class="er" role="listitem"><div class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trophy" xlink:href="#i-trophy"/></svg></div><b>100%</b><span>First-take LEPT passing rate</span></div>
+          <div class="er" role="listitem"><div class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-medal" xlink:href="#i-medal"/></svg></div><b>9</b><span>National top notchers</span></div>
+          <div class="er" role="listitem"><div class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe" xlink:href="#i-globe"/></svg></div><b>Global</b><span>Exchange with UM, Indonesia</span></div>
+          <div class="er" role="listitem"><div class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book" xlink:href="#i-book"/></svg></div><b>Scopus</b><span>Research-active faculty</span></div>
         </div>
       </div>
     </div>
@@ -1043,23 +1147,23 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <section class="section" id="contact" aria-labelledby="h-about">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="pill">✦ About the Program</span>
+      <span class="pill"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark" xlink:href="#i-spark"/></svg> About the Program</span>
       <h2 id="h-about">Bachelor of Physical Education at <span class="gold">MSU–GenSan</span></h2>
     </div>
     <div class="bento" style="grid-template-columns:repeat(3,1fr)">
-      <div class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon">🏛️</div><h3>The Program</h3><p>The Bachelor of Physical Education (BPED) is offered by the College of Education of MSU – General Santos City, preparing future PE teachers in pedagogy, sports science, and movement education.</p></div>
-      <div class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon">📝</div><h3>The LEPT</h3><p>The Licensure Examination for Professional Teachers is administered by the PRC. Passers earn the LPT title. The March 2026 exam was the first taken by BPED's pioneering Batch Maragsa.</p></div>
-      <div class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon">🌟</div><h3>The Legacy</h3><p>A 100% first-take passing rate and 9 national top notchers set the standard for future batches — a milestone in the university's mission of <em>fostering excellence</em>.</p></div>
+      <div class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-landmark" xlink:href="#i-landmark"/></svg></div><h3>The Program</h3><p>The Bachelor of Physical Education (BPED) is offered by the College of Education of MSU – General Santos City, preparing future PE teachers in pedagogy, sports science, and movement education.</p></div>
+      <div class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file" xlink:href="#i-file"/></svg></div><h3>The LEPT</h3><p>The Licensure Examination for Professional Teachers is administered by the PRC. Passers earn the LPT title. The March 2026 exam was the first taken by BPED's pioneering Batch Maragsa.</p></div>
+      <div class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star" xlink:href="#i-star"/></svg></div><h3>The Legacy</h3><p>A 100% first-take passing rate and 9 national top notchers set the standard for future batches — a milestone in the university's mission of <em>fostering excellence</em>.</p></div>
     </div>
     <div class="contact-banner reveal">
       <div>
         <h3>Questions, verification requests, or research collaboration?</h3>
         <p>Reach the BPED Department — we'd love to hear from you.</p>
       </div>
-      <a class="btn btn-gold" href="mailto:bped@msugensan.edu.ph">✉️ bped@msugensan.edu.ph</a>
+      <a class="btn btn-gold" href="mailto:bped@msugensan.edu.ph"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail" xlink:href="#i-mail"/></svg> bped@msugensan.edu.ph</a>
     </div>
     <div class="privacy reveal">
-      <strong>🔒 Data Privacy Notice.</strong> This dashboard presents survey results in aggregate, anonymized form in compliance with the Data Privacy Act of 2012 (RA 10173). No personal contact details, raw individual responses, or identifying information of respondents are displayed. Top notcher names appear as published in the official PRC results, which are a matter of public record. Survey data were collected with consent through the official BPED BLEPT Tracer Form for institutional research purposes.
+      <strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lock" xlink:href="#i-lock"/></svg> Data Privacy Notice.</strong> This dashboard presents survey results in aggregate, anonymized form in compliance with the Data Privacy Act of 2012 (RA 10173). No personal contact details, raw individual responses, or identifying information of respondents are displayed. Top notcher names appear as published in the official PRC results, which are a matter of public record. Survey data were collected with consent through the official BPED BLEPT Tracer Form for institutional research purposes.
     </div>
   </div>
 </section>
@@ -1073,13 +1177,21 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="logo-strip" style="margin:0 auto 28px">
       <img src="images/logo-msu.png" alt="Mindanao State University – General Santos" onerror="this.style.display='none'">
       <img src="images/logo-bped.png" alt="Bachelor of Physical Education" onerror="this.style.display='none'">
-      <img src="images/logo-um.png" alt="Universitas Negeri Malang" onerror="this.style.display='none'">
     </div>
     <p class="uni">Mindanao State University – General Santos City</p>
     <p class="motto">fostering excellence</p>
     <p>College of Education · Bachelor of Physical Education Program · Batch Maragsa (Pioneering Batch)</p>
+    <div style="margin:22px auto 0;display:flex;flex-direction:column;align-items:center;gap:10px">
+      <span style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2)">International partners</span>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
+        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.8rem;color:#fff">
+          <img src="images/logo-um.png" alt="Universitas Negeri Malang" style="width:24px;height:24px;border-radius:50%;background:#fff;object-fit:contain;padding:2px" onerror="this.style.display='none'">Universitas Negeri Malang <span style="color:var(--muted-2)">· Indonesia</span></span>
+        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.8rem;color:#fff">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px;color:var(--gold-soft)"><use href="#i-landmark" xlink:href="#i-landmark"/></svg>University of Portsmouth <span style="color:var(--muted-2)">· United Kingdom</span></span>
+      </div>
+    </div>
     <p style="margin-top:1rem">Developed by <span class="dev">Asst. Prof. Jay Carlo S. Bagayas</span></p>
-    <p>📧 <a href="mailto:bped@msugensan.edu.ph">bped@msugensan.edu.ph</a></p>
+    <p><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail" xlink:href="#i-mail"/></svg> <a href="mailto:bped@msugensan.edu.ph">bped@msugensan.edu.ph</a></p>
     <p class="fine">© 2026 BPED LEPT Analytics · Data source: BPED BLEPT Tracer Study (53 respondents, May 2026) · Built with accessibility in mind (WCAG-aligned)</p>
   </div>
 </footer>
