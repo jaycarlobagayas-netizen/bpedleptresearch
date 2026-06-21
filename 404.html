@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — BPED MSU–GenSan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0608;--gold:#f2b705;--gold-soft:#ffd95e;--maroon:#a52338;--text:#f6efe6;--muted:#b3a39c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px;overflow:hidden}
+  .blob{position:fixed;border-radius:50%;filter:blur(80px);z-index:0;pointer-events:none}
+  .b1{width:480px;height:480px;background:radial-gradient(circle,rgba(165,35,56,.4),transparent 65%);top:-160px;left:-120px}
+  .b2{width:420px;height:420px;background:radial-gradient(circle,rgba(242,183,5,.16),transparent 65%);bottom:-180px;right:-100px}
+  .wrap{position:relative;z-index:1;max-width:560px}
+  .code{font-family:'Syncopate',sans-serif;font-size:clamp(70px,18vw,150px);line-height:1;color:var(--gold);text-shadow:0 4px 40px rgba(242,183,5,.3)}
+  h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,4vw,32px);font-weight:600;margin:14px 0 12px}
+  p{color:var(--muted);font-size:16px;margin-bottom:30px}
+  a{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:#1a0a0e;font-weight:600;text-decoration:none;padding:15px 30px;border-radius:999px;transition:transform .25s,box-shadow .25s}
+  a:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(242,183,5,.35)}
+  .motto{margin-top:34px;font-style:italic;color:var(--gold);font-size:.9rem}
+</style>
+</head>
+<body>
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <div class="wrap">
+    <div class="code">404</div>
+    <h1>This page took a wrong turn</h1>
+    <p>The page you're looking for doesn't exist or has moved. Let's get you back on track.</p>
+    <a href="/">← Back to home</a>
+    <p class="motto">MSU – General Santos · fostering excellence</p>
+  </div>
+</body>
+</html>

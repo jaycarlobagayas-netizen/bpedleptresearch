@@ -341,6 +341,54 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 @media(prefers-reduced-motion:reduce){.bm-ghost,.bm-comdot,.bm-force,.bm-scan{animation:none}.bm-ghost{opacity:.3}}
 @media(max-width:860px){.bm-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.bm-grid{grid-template-columns:1fr}}
+/* ===== BIOMECH LAB (interactive projectile) ===== */
+.bm-lab{margin-top:30px;display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch}
+.bm-lab .stage2{position:relative;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,#0e0a0c,#140d10);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.bm-lab .stage2 svg{display:block;width:100%;height:auto}
+.bm-lab .stage2 .tag{position:absolute;top:16px;left:18px;z-index:3;font-family:var(--grok);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line-gold);background:rgba(10,6,8,.6);border-radius:999px;padding:6px 12px;backdrop-filter:blur(6px)}
+.bm-panel{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:14px}
+.bm-panel h4{font-family:var(--grok);font-size:1.05rem;color:var(--gold-soft)}
+.bm-panel .lead{font-size:.86rem;color:var(--muted)}
+.bm-ctrl label{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:8px;letter-spacing:.02em}
+.bm-ctrl label b{color:var(--gold);font-family:var(--grok)}
+.bm-ctrl input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:rgba(255,255,255,.12);outline:none;margin-bottom:16px;cursor:pointer}
+.bm-ctrl input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold));border:2px solid #1a0a0e;box-shadow:0 2px 8px rgba(242,183,5,.5);cursor:pointer}
+.bm-ctrl input[type=range]::-moz-range-thumb{width:20px;height:20px;border:2px solid #1a0a0e;border-radius:50%;background:var(--gold);cursor:pointer}
+.bm-read{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bm-read .stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:11px 14px}
+.bm-read .stat .v{font-family:var(--grok);font-size:1.25rem;font-weight:700;color:var(--gold);line-height:1}
+.bm-read .stat .k{font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin-top:5px}
+.bm-launch{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:#1a0a0e;font-weight:700;border:none;border-radius:999px;padding:13px 22px;cursor:pointer;font-size:.95rem;transition:transform .2s,box-shadow .2s}
+.bm-launch:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(242,183,5,.35)}
+.bm-hint{font-size:.76rem;color:var(--muted-2)}
+.bm-hint b{color:var(--gold-soft)}
+.bm-opt{color:#7fe0a6;font-weight:700}
+@media(max-width:860px){.bm-lab{grid-template-columns:1fr}}
+/* ===== SKILLS VISUAL (designed, no photo) ===== */
+.skill-visual{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:32px;background:radial-gradient(circle at 28% 18%,rgba(242,183,5,.16),transparent 58%),linear-gradient(150deg,var(--maroon),var(--maroon-deep))}
+.skill-visual .sv-row{display:flex;gap:11px;flex-wrap:wrap}
+.skill-visual .sv-row.b{padding-left:26px}
+.skill-visual .sv{display:inline-flex;align-items:center;gap:9px;background:rgba(10,6,8,.42);border:1px solid var(--line-gold);border-radius:999px;padding:10px 15px;font-weight:600;font-size:.88rem;color:#fff;backdrop-filter:blur(4px);animation:svFloat 5s ease-in-out infinite}
+.skill-visual .sv .e{font-size:1.1rem}
+.skill-visual .sv:nth-child(2){animation-delay:.6s}.skill-visual .sv:nth-child(3){animation-delay:1.2s}
+@keyframes svFloat{50%{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.skill-visual .sv{animation:none}}
+/* ===== ENROLL / PROMO ===== */
+#enroll{position:relative;overflow:hidden}
+.enroll-wrap{position:relative;background:linear-gradient(135deg,var(--maroon-deep),var(--maroon) 58%,#7c1626);border:1px solid var(--line-gold);border-radius:calc(var(--radius) + 6px);padding:clamp(32px,5vw,62px);overflow:hidden}
+.enroll-wrap::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(242,183,5,.22),transparent 65%);top:-230px;right:-120px;pointer-events:none}
+.enroll-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.enroll-lead h2{font-family:var(--grok);font-weight:700;font-size:clamp(27px,4vw,46px);line-height:1.05;margin:16px 0 14px;letter-spacing:-.02em}
+.enroll-lead h2 .gold{color:var(--gold)}
+.enroll-lead p{color:#f3e2cf;font-size:16px;max-width:520px}
+.enroll-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.enroll-reasons{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.er{background:rgba(10,6,8,.4);border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:18px;backdrop-filter:blur(4px)}
+.er .ic{font-size:1.4rem}
+.er b{display:block;font-family:var(--grok);color:#fff;font-size:1.55rem;line-height:1;margin:8px 0 4px}
+.er span{font-size:.8rem;color:#e9d4bf}
+@media(max-width:860px){.enroll-grid{grid-template-columns:1fr;gap:26px}}
+@media(max-width:460px){.enroll-reasons{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -363,7 +411,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
       <a href="#exchange">Global</a>
       <a href="#review">LEPT Review</a>
       <a href="#publications">Research</a>
-      <a href="#updates">Updates</a>
+      <a href="#enroll">Enroll</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="burger" id="burger" role="button" aria-label="Open menu" tabindex="0">
@@ -385,6 +433,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <p class="sub reveal d1">Celebrating <strong>Batch Maragsa</strong> — the pioneering Bachelor of Physical Education graduates of Mindanao State University – General Santos City: 53 first-time takers, 53 new Licensed Professional Teachers, and 9 national top notchers.</p>
     <div class="hero-actions reveal d2">
       <a href="#topnotchers" class="btn btn-gold">Meet the Top Notchers <span class="arrow">→</span></a>
+      <a href="#enroll" class="btn btn-ghost">Study BPED Here ↓</a>
       <a href="#performance" class="btn btn-ghost">View Analytics</a>
     </div>
     <div class="hero-stats reveal d3" role="list">
@@ -526,8 +575,121 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
       <div class="bm-pillar reveal d2"><div class="ic">🧠</div><h4>Motor learning</h4><p>How skills are acquired, refined, and retained over time.</p></div>
       <div class="bm-pillar reveal d3"><div class="ic">🎓</div><h4>Pedagogy &amp; coaching</h4><p>Turning movement science into great teaching and coaching.</p></div>
     </div>
+
+    <!-- INTERACTIVE PROJECTILE LAB -->
+    <div class="bm-lab reveal">
+      <div class="stage2">
+        <span class="tag">Interactive · Projectile motion</span>
+        <svg id="bmLabSvg" viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive projectile-motion diagram. Use the angle and speed sliders to change the trajectory of a launched ball; range, maximum height and flight time update live.">
+          <defs>
+            <marker id="bmLabArrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f2b705"/></marker>
+            <radialGradient id="bmLabBall" cx="40%" cy="35%" r="65%"><stop offset="0%" stop-color="#ffe9a8"/><stop offset="100%" stop-color="#e9711c"/></radialGradient>
+          </defs>
+          <!-- grid -->
+          <g opacity=".10" stroke="#ffffff" stroke-width="1">
+            <line x1="170" y1="40" x2="170" y2="320"/><line x1="270" y1="40" x2="270" y2="320"/><line x1="370" y1="40" x2="370" y2="320"/><line x1="470" y1="40" x2="470" y2="320"/><line x1="570" y1="40" x2="570" y2="320"/><line x1="670" y1="40" x2="670" y2="320"/><line x1="770" y1="40" x2="770" y2="320"/>
+            <line x1="70" y1="120" x2="800" y2="120"/><line x1="70" y1="220" x2="800" y2="220"/>
+          </g>
+          <!-- ground -->
+          <line x1="40" y1="320" x2="800" y2="320" stroke="#f2b705" stroke-opacity=".45" stroke-width="2"/>
+          <text x="792" y="338" fill="#80706a" font-size="11" font-family="'Space Grotesk',sans-serif" text-anchor="end">distance →</text>
+          <text x="50" y="54" fill="#80706a" font-size="11" font-family="'Space Grotesk',sans-serif">↑ height</text>
+          <!-- trajectory -->
+          <polyline id="bmLabPath" fill="none" stroke="#f2b705" stroke-width="2.5" stroke-dasharray="2 6" points="70,320"/>
+          <!-- apex -->
+          <g id="bmApex">
+            <line x1="0" y1="0" x2="0" y2="0" stroke="#ffd95e" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>
+            <circle cx="0" cy="0" r="4.5" fill="none" stroke="#ffd95e" stroke-width="2"/>
+            <text x="0" y="0" fill="#ffd95e" font-size="11" font-family="'Space Grotesk',sans-serif" text-anchor="middle">peak</text>
+          </g>
+          <!-- velocity arrow + angle -->
+          <line id="bmVel" x1="70" y1="320" x2="120" y2="282" stroke="#f2b705" stroke-width="2.5" marker-end="url(#bmLabArrow)"/>
+          <text id="bmAngleT" x="104" y="308" fill="#ffd95e" font-size="12" font-family="'Space Grotesk',sans-serif">45°</text>
+          <!-- launcher -->
+          <path d="M58,320 L82,320 L70,300 Z" fill="#a52338" stroke="#f2b705" stroke-width="1.5"/>
+          <!-- range bracket -->
+          <g id="bmRange">
+            <line x1="70" y1="336" x2="70" y2="336" stroke="#b3a39c" stroke-width="1.5"/>
+            <text x="70" y="350" fill="#b3a39c" font-size="12" font-family="'Space Grotesk',sans-serif" text-anchor="middle">0 m</text>
+          </g>
+          <!-- ball -->
+          <circle id="bmBall" cx="70" cy="320" r="8" fill="url(#bmLabBall)"/>
+        </svg>
+      </div>
+      <div class="bm-panel">
+        <h4>🎯 Projectile lab</h4>
+        <p class="lead">Every jump, throw, and kick in PE is projectile motion. Drag the sliders to see how launch angle and speed reshape the path — the same analysis a coach makes for a long jump or a shot put.</p>
+        <div class="bm-ctrl">
+          <label>Launch angle <b><span id="bmAngleV">45</span>°</b></label>
+          <input id="bmAngle" type="range" min="10" max="80" value="45" step="1" aria-label="Launch angle in degrees">
+          <label>Launch speed <b><span id="bmSpeedV">12</span> m/s</b></label>
+          <input id="bmSpeed" type="range" min="5" max="15" value="12" step="0.5" aria-label="Launch speed in metres per second">
+        </div>
+        <div class="bm-read">
+          <div class="stat"><div class="v" id="bmRangeV">0 m</div><div class="k">Range</div></div>
+          <div class="stat"><div class="v" id="bmHeightV">0 m</div><div class="k">Max height</div></div>
+          <div class="stat"><div class="v" id="bmTimeV">0 s</div><div class="k">Flight time</div></div>
+          <div class="stat"><div class="v" id="bmOptV">45°</div><div class="k">Best for range</div></div>
+        </div>
+        <button class="bm-launch" id="bmGo" type="button">▶ Launch</button>
+        <p class="bm-hint">Tip: on flat ground the <b>longest range</b> comes from a <span class="bm-opt">45° launch</span> — pure biomechanics.</p>
+      </div>
+    </div>
   </div>
 </section>
+<script>
+/* ---------- Interactive projectile lab ---------- */
+(function(){
+  var SCALE=25, OX=70, GY=320, g=9.81;
+  var aEl=document.getElementById('bmAngle'), sEl=document.getElementById('bmSpeed');
+  if(!aEl) return;
+  var path=document.getElementById('bmLabPath'), ball=document.getElementById('bmBall'),
+      vel=document.getElementById('bmVel'), angT=document.getElementById('bmAngleT'),
+      apex=document.getElementById('bmApex'), rangeG=document.getElementById('bmRange');
+  var rngV=document.getElementById('bmRangeV'), hV=document.getElementById('bmHeightV'),
+      tV=document.getElementById('bmTimeV'), aV=document.getElementById('bmAngleV'), sV=document.getElementById('bmSpeedV');
+  var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches, anim=null, playing=false;
+  function px(x){return OX+x*SCALE;} function py(y){return GY-y*SCALE;}
+  function compute(){
+    var a=parseFloat(aEl.value), v=parseFloat(sEl.value), rad=a*Math.PI/180;
+    var vx=v*Math.cos(rad), vy=v*Math.sin(rad);
+    return {a:a,v:v,rad:rad,vx:vx,vy:vy,T:2*vy/g,R:vx*(2*vy/g),H:vy*vy/(2*g)};
+  }
+  function draw(){
+    var d=compute();
+    aV.textContent=d.a; sV.textContent=(d.v%1===0)?d.v:d.v.toFixed(1);
+    rngV.textContent=d.R.toFixed(1)+' m'; hV.textContent=d.H.toFixed(1)+' m'; tV.textContent=d.T.toFixed(2)+' s';
+    var N=46, pts=[];
+    for(var i=0;i<=N;i++){var t=d.T*i/N,x=d.vx*t,y=d.vy*t-0.5*g*t*t;pts.push(px(x).toFixed(1)+','+py(Math.max(0,y)).toFixed(1));}
+    path.setAttribute('points',pts.join(' '));
+    var L=36+(d.v/15)*70;
+    vel.setAttribute('x2',OX+Math.cos(d.rad)*L); vel.setAttribute('y2',GY-Math.sin(d.rad)*L);
+    angT.setAttribute('x',OX+34); angT.setAttribute('y',GY-12); angT.textContent=d.a+'°';
+    var ax=px(d.R/2), ay=py(d.H), ln=apex.querySelector('line'), c=apex.querySelector('circle'), tx=apex.querySelector('text');
+    ln.setAttribute('x1',ax);ln.setAttribute('y1',ay);ln.setAttribute('x2',ax);ln.setAttribute('y2',GY);
+    c.setAttribute('cx',ax);c.setAttribute('cy',ay); tx.setAttribute('x',ax);tx.setAttribute('y',ay-9);
+    var rl=rangeG.querySelector('line'), rt=rangeG.querySelector('text');
+    rl.setAttribute('x1',OX);rl.setAttribute('x2',px(d.R)); rt.setAttribute('x',(OX+px(d.R))/2); rt.textContent=d.R.toFixed(1)+' m';
+    if(!playing){ball.setAttribute('cx',OX);ball.setAttribute('cy',GY);}
+    return d;
+  }
+  function launch(){
+    var d=draw(); if(reduced)return; playing=true; cancelAnimationFrame(anim);
+    var dur=Math.min(2400,800+d.T*650), t0=null;
+    function step(ts){
+      if(t0===null)t0=ts;
+      var k=Math.min((ts-t0)/dur,1), t=d.T*k, x=d.vx*t, y=Math.max(0,d.vy*t-0.5*g*t*t);
+      ball.setAttribute('cx',px(x)); ball.setAttribute('cy',py(y));
+      if(k<1){anim=requestAnimationFrame(step);} else {playing=false;ball.setAttribute('cx',px(d.R));ball.setAttribute('cy',GY);}
+    }
+    anim=requestAnimationFrame(step);
+  }
+  aEl.addEventListener('input',function(){playing=false;cancelAnimationFrame(anim);draw();});
+  sEl.addEventListener('input',function(){playing=false;cancelAnimationFrame(anim);draw();});
+  document.getElementById('bmGo').addEventListener('click',launch);
+  draw();
+})();
+</script>
 
 <!-- TOP NOTCHERS -->
 <section class="section" id="topnotchers" aria-labelledby="h-notch">
@@ -593,8 +755,8 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="feature reveal">
       <div class="feat-media">
         <span class="badge">Universitas Negeri Malang 🇮🇩</span>
-        <div class="ph"><div><span class="big">🌏</span><strong>International Research Exposure</strong><small>images/exchange-research.png</small></div></div>
-        <img src="images/exchange-research.png" alt="BPED faculty and students at the International Research Exposure, Universitas Negeri Malang, Indonesia" loading="lazy" onerror="this.style.display='none'">
+        <div class="ph"><div><span class="big">🌏</span><strong>International Research Exposure</strong><small>images/exchange-research.jpg</small></div></div>
+        <img src="images/exchange-research.jpg" alt="BPED faculty and students at the International Research Exposure, Universitas Negeri Malang, Indonesia" loading="lazy" onerror="this.style.display='none'">
       </div>
       <div class="feat-body">
         <span class="didyou">Did you know?</span>
@@ -615,8 +777,8 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
       </div>
     </div>
     <div class="wide-media reveal" style="min-height:220px">
-      <div class="ph" style="position:absolute;inset:0;z-index:1;display:grid;place-items:center;text-align:center"><div><span style="font-size:2.4rem">🎓</span><strong style="display:block;color:var(--gold-soft);font-family:var(--grok);margin-top:8px">Excellent research presentations at UM Malang</strong><small style="color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem">images/exchange-congrats.png</small></div></div>
-      <img src="images/exchange-congrats.png" alt="SCOPE congratulations to BPED faculty and exchange students for excellent research presentations at Universitas Negeri Malang" loading="lazy" style="position:relative;z-index:2" onerror="this.style.display='none'">
+      <div class="ph" style="position:absolute;inset:0;z-index:1;display:grid;place-items:center;text-align:center"><div><span style="font-size:2.4rem">🎓</span><strong style="display:block;color:var(--gold-soft);font-family:var(--grok);margin-top:8px">Excellent research presentations at UM Malang</strong><small style="color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem">images/exchange-congrats.jpg</small></div></div>
+      <img src="images/exchange-congrats.jpg" alt="SCOPE congratulations to BPED faculty and exchange students for excellent research presentations at Universitas Negeri Malang" loading="lazy" style="position:relative;z-index:2" onerror="this.style.display='none'">
     </div>
   </div>
 </section>
@@ -627,8 +789,11 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="feature rev reveal">
       <div class="feat-media">
         <span class="badge">Hands-on training</span>
-        <div class="ph"><div><span class="big">💪</span><strong>Skill Development</strong><small>images/skills.png</small></div></div>
-        <img src="images/skills.png" alt="BPED students in skills training" loading="lazy" onerror="this.style.display='none'">
+        <div class="skill-visual" role="img" aria-label="Skill tracks in the BPED program: sports science, coaching, fitness testing, gymnastics, dance, first aid, and officiating.">
+          <div class="sv-row"><span class="sv"><span class="e">🏃</span>Sports science</span><span class="sv"><span class="e">📋</span>Coaching</span></div>
+          <div class="sv-row b"><span class="sv"><span class="e">🧪</span>Fitness testing</span><span class="sv"><span class="e">🤸</span>Gymnastics</span></div>
+          <div class="sv-row"><span class="sv"><span class="e">💃</span>Dance</span><span class="sv"><span class="e">🩹</span>First aid</span><span class="sv"><span class="e">⚖️</span>Officiating</span></div>
+        </div>
       </div>
       <div class="feat-body">
         <span class="eyebrow">Beyond the classroom</span>
@@ -654,8 +819,8 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="feature reveal">
       <div class="feat-media">
         <span class="badge">BLEPT MAPEH · PE Majorship Review</span>
-        <div class="ph"><div><span class="big">🎯</span><strong>BLEPT Majorship Review</strong><small>images/review-program.png</small></div></div>
-        <img src="images/review-program.png" alt="BLEPT MAPEH Majorship and PE Majorship Review program" loading="lazy" onerror="this.style.display='none'">
+        <div class="ph"><div><span class="big">🎯</span><strong>BLEPT Majorship Review</strong><small>images/review-program.jpg</small></div></div>
+        <img src="images/review-program.jpg" alt="BLEPT MAPEH Majorship and PE Majorship Review program" loading="lazy" onerror="this.style.display='none'">
       </div>
       <div class="feat-body">
         <span class="eyebrow">The road to the boards</span>
@@ -727,8 +892,8 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
     <div class="feature reveal" style="margin-bottom:48px">
       <div class="feat-media">
         <span class="badge">Editorial Board · Scopus Q3</span>
-        <div class="ph"><div><span class="big">🔬</span><strong>Research Excellence</strong><small>images/research-editorial.png</small></div></div>
-        <img src="images/research-editorial.png" alt="BPED chairperson appointed editorial board member of the Journal of Coaching and Sports Science (Scopus Q3)" loading="lazy" onerror="this.style.display='none'">
+        <div class="ph"><div><span class="big">🔬</span><strong>Research Excellence</strong><small>images/research-editorial.jpg</small></div></div>
+        <img src="images/research-editorial.jpg" alt="BPED chairperson appointed editorial board member of the Journal of Coaching and Sports Science (Scopus Q3)" loading="lazy" onerror="this.style.display='none'">
       </div>
       <div class="feat-body">
         <span class="eyebrow">A research-active department</span>
@@ -835,6 +1000,31 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
         <button type="button" id="prevQ" aria-label="Previous quote">‹ Prev</button>
         <button type="button" id="pauseQ" aria-pressed="false">Pause</button>
         <button type="button" id="nextQ" aria-label="Next quote">Next ›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENROLL / PROGRAM PROMOTION -->
+<section class="section" id="enroll" aria-labelledby="h-enroll">
+  <div class="wrap">
+    <div class="enroll-wrap reveal">
+      <div class="enroll-grid">
+        <div class="enroll-lead">
+          <span class="pill">✦ Future Educators, Start Here</span>
+          <h2 id="h-enroll">Become the next <span class="gold">national top notcher</span></h2>
+          <p>Study the Bachelor of Physical Education at MSU – General Santos — the program behind a <strong>100% first-take LEPT passing rate</strong>, 9 national top notchers, Scopus-indexed research, and an international exchange with Universitas Negeri Malang. Turn your passion for sport and movement into a licensed teaching career.</p>
+          <div class="enroll-actions">
+            <a href="mailto:bped@msugensan.edu.ph?subject=BPED%20Admission%20Inquiry" class="btn btn-gold">Apply / Inquire Now <span class="arrow">→</span></a>
+            <a href="https://www.facebook.com/SCOPEMSUGENSAN" target="_blank" rel="noopener" class="btn btn-ghost">Follow on Facebook ↗</a>
+          </div>
+        </div>
+        <div class="enroll-reasons" role="list">
+          <div class="er" role="listitem"><div class="ic">🏆</div><b>100%</b><span>First-take LEPT passing rate</span></div>
+          <div class="er" role="listitem"><div class="ic">🎖️</div><b>9</b><span>National top notchers</span></div>
+          <div class="er" role="listitem"><div class="ic">🌏</div><b>Global</b><span>Exchange with UM, Indonesia</span></div>
+          <div class="er" role="listitem"><div class="ic">📚</div><b>Scopus</b><span>Research-active faculty</span></div>
+        </div>
       </div>
     </div>
   </div>
