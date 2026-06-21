@@ -3,254 +3,400 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BPED Analytics | LEPT | Research — Bachelor of Physical Education, Mindanao State University – General Santos. 100% passing rate, 9 top notchers, March 2026. Fostering Excellence.">
+<meta name="description" content="BPED Analytics | LEPT | Research — Bachelor of Physical Education, Mindanao State University – General Santos. 100% passing rate, 9 national top notchers, March 2026. Fostering Excellence.">
+<meta name="theme-color" content="#0a0608">
+<meta property="og:title" content="BPED Analytics | LEPT | Research — MSU–General Santos">
+<meta property="og:description" content="A historic 100% passing rate and 9 national top notchers for the pioneering BPED batch of MSU–General Santos.">
+<meta property="og:type" content="website">
 <title>BPED Analytics | LEPT | Research — MSU–General Santos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syncopate:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --maroon:#6b1320; --maroon-dark:#4a0d16; --maroon-deep:#330911;
-    --gold:#f2b705; --gold-soft:#ffd95e; --cream:#fdf8ef;
-    --ink:#241a1c; --ink-soft:#5b4a4e; --card:#ffffff;
-    --ok:#1c7c4a; --radius:18px;
-    --shadow:0 10px 35px rgba(51,9,17,.12);
-    --font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *,*::before,*::after{animation:none!important;transition:none!important}
-  }
-  body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.6}
-  .skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--maroon-deep);padding:.7rem 1.2rem;font-weight:700;z-index:1000;border-radius:0 0 10px 0}
-  .skip-link:focus{left:0}
-  a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+:root{
+  --bg:#0a0608;
+  --panel:#130d0f;
+  --panel-2:#1a1214;
+  --maroon:#6b1320;
+  --maroon-bright:#a52338;
+  --maroon-deep:#330911;
+  --gold:#f2b705;
+  --gold-soft:#ffd95e;
+  --gold-deep:#c8960a;
+  --text:#f6efe6;
+  --muted:#b3a39c;
+  --muted-2:#80706a;
+  --line:rgba(255,255,255,.08);
+  --line-gold:rgba(242,183,5,.28);
+  --radius:26px;
+  --maxw:1280px;
+  --grok:'Space Grotesk',sans-serif;
+  --display:'Syncopate',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);
+  -webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden;cursor:none;
+}
+@media (hover:none){body{cursor:auto}}
+::selection{background:var(--gold);color:#1a0a0e}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+.display{font-family:var(--display);letter-spacing:.06em}
+.grok{font-family:var(--grok)}
+.gold{color:var(--gold)}
+.maroon{color:var(--maroon-bright)}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--gold);color:#1a0a0e;padding:.7rem 1.2rem;font-weight:700;z-index:1000;border-radius:0 0 10px 0}
+.skip-link:focus{left:0}
 
-  /* ===== NAV ===== */
-  nav{position:sticky;top:0;z-index:100;background:rgba(51,9,17,.96);backdrop-filter:blur(8px);color:#fff;box-shadow:0 2px 14px rgba(0,0,0,.25)}
-  .nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:1rem;padding:.65rem 1.2rem;flex-wrap:wrap}
-  .brand{display:flex;align-items:center;gap:.65rem;font-weight:800;letter-spacing:.5px}
-  .brand .seal{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold-soft),var(--gold) 55%,#b8860b);display:grid;place-items:center;color:var(--maroon-deep);font-weight:900;font-size:.7rem;border:2px solid var(--gold-soft);flex-shrink:0}
-  .brand small{display:block;font-weight:400;font-size:.68rem;opacity:.85;letter-spacing:1px}
-  nav ul{display:flex;gap:.2rem;list-style:none;margin-left:auto;flex-wrap:wrap}
-  nav ul a{color:#f6e8d5;text-decoration:none;font-size:.86rem;padding:.5rem .8rem;border-radius:8px;transition:background .2s}
-  nav ul a:hover{background:rgba(242,183,5,.18);color:var(--gold-soft)}
+/* custom cursor */
+.cursor{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--gold);top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .12s ease}
+.cursor-ring{position:fixed;width:38px;height:38px;border:1px solid rgba(242,183,5,.55);border-radius:50%;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s ease,height .18s ease,border-color .18s ease}
+body.hovering .cursor-ring{width:64px;height:64px;border-color:var(--gold)}
+@media (hover:none){.cursor,.cursor-ring{display:none}}
 
-  /* ===== HERO ===== */
-  header.hero{position:relative;overflow:hidden;background:
-    radial-gradient(1100px 500px at 80% -10%,rgba(242,183,5,.22),transparent 60%),
-    radial-gradient(800px 420px at 10% 110%,rgba(242,183,5,.14),transparent 55%),
-    linear-gradient(150deg,var(--maroon-deep) 0%,var(--maroon-dark) 45%,var(--maroon) 100%);
-    color:#fff;text-align:center;padding:5.5rem 1.2rem 7.5rem}
-  .hero::after{content:"";position:absolute;inset:auto 0 -2px 0;height:110px;background:var(--cream);clip-path:ellipse(75% 100% at 50% 100%)}
-  .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-  .confetti i{position:absolute;top:-12px;width:9px;height:14px;opacity:.85;animation:fall linear infinite}
-  @keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
-  .hero .eyebrow{display:inline-block;background:rgba(242,183,5,.16);border:1px solid rgba(242,183,5,.5);color:var(--gold-soft);padding:.45rem 1.2rem;border-radius:999px;font-size:.8rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin-bottom:1.4rem}
-  .hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.15;max-width:880px;margin:0 auto .8rem;font-weight:900}
-  .hero h1 .gold{color:var(--gold);text-shadow:0 2px 18px rgba(242,183,5,.4)}
-  .hero p.sub{max-width:640px;margin:0 auto 2.6rem;color:#f0ddc7;font-size:1.05rem}
-  .hero-stats{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;z-index:2}
-  .stat-card{background:rgba(255,255,255,.07);border:1px solid rgba(242,183,5,.35);border-radius:var(--radius);padding:1.3rem 1.9rem;min-width:158px;backdrop-filter:blur(6px)}
-  .stat-card .num{font-size:2.4rem;font-weight:900;color:var(--gold)}
-  .stat-card .lbl{font-size:.78rem;letter-spacing:1.4px;text-transform:uppercase;color:#f3e3cd}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-gold);border-radius:999px;padding:8px 16px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);background:rgba(242,183,5,.05)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:15px;border-radius:999px;padding:15px 30px;cursor:none;border:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,color .25s}
+@media (hover:none){.btn{cursor:pointer}}
+.btn-gold{background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:#1a0a0e}
+.btn-gold:hover{box-shadow:0 14px 36px rgba(242,183,5,.35);transform:translateY(-2px)}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:#fff}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.arrow{transition:transform .25s ease}
+.btn:hover .arrow{transform:translateX(5px)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
 
-  /* ===== LAYOUT ===== */
-  main{max-width:1200px;margin:auto;padding:0 1.2rem}
-  section{padding:3.6rem 0 1rem}
-  .sec-head{text-align:center;max-width:720px;margin:0 auto 2.4rem}
-  .sec-head .tag{color:var(--maroon);font-weight:800;letter-spacing:3px;font-size:.74rem;text-transform:uppercase}
-  .sec-head h2{font-size:clamp(1.5rem,3.2vw,2.2rem);font-weight:900;color:var(--maroon-deep);margin:.35rem 0 .6rem}
-  .sec-head p{color:var(--ink-soft);font-size:.96rem}
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+.section{padding:110px 0;position:relative}
+.section-head{max-width:760px;margin:0 auto 60px}
+.section-head.center{text-align:center}
+.section-head h2{font-family:var(--grok);font-size:clamp(30px,4.4vw,52px);font-weight:600;line-height:1.06;margin:18px 0 16px;letter-spacing:-.02em}
+.section-head p{color:var(--muted);font-size:17px}
 
-  .grid{display:grid;gap:1.4rem}
-  .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-  .g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.6rem;border-top:4px solid var(--gold)}
-  .card h3{color:var(--maroon-deep);font-size:1.02rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-  .chart-wrap{position:relative;height:300px}
-  .chart-wrap.tall{height:340px}
+/* reveal */
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+.mask-line{overflow:hidden;display:block}
+.mask-line>span{display:block;transform:translateY(110%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.mask-line.in>span{transform:none}
 
-  /* ===== TOPNOTCHERS ===== */
-  .notch-grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}
-  .notch{position:relative;background:linear-gradient(160deg,#fff 0%,#fdf4dd 100%);border:1px solid #eedfb8;border-radius:var(--radius);padding:1.7rem 1.4rem 1.4rem;text-align:center;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
-  .notch:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(51,9,17,.2)}
-  .notch .place{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:var(--maroon-deep);font-weight:900;padding:.4rem 1.1rem;border-radius:999px;font-size:.82rem;letter-spacing:1px;box-shadow:0 4px 12px rgba(242,183,5,.5)}
-  .notch.first{background:linear-gradient(160deg,#fff8e2,#ffe9a8);border-color:var(--gold)}
-  .notch .avatar{width:64px;height:64px;margin:0.6rem auto .8rem;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--maroon-dark));color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.3rem;border:3px solid var(--gold)}
-  .notch h3{font-size:1.04rem;color:var(--maroon-deep);line-height:1.3}
-  .notch .honor{display:inline-block;margin:.45rem 0;background:var(--maroon);color:var(--gold-soft);font-size:.68rem;font-weight:700;letter-spacing:1.2px;padding:.28rem .8rem;border-radius:999px;text-transform:uppercase}
-  .notch .rating{font-size:1.55rem;font-weight:900;color:var(--maroon)}
-  .notch .rating small{font-size:.72rem;color:var(--ink-soft);font-weight:600;display:block;letter-spacing:1px}
+/* progress */
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--maroon-bright),var(--gold));z-index:200;width:0%}
 
-  /* ===== RATING BARS ===== */
-  .rate-row{margin-bottom:1.25rem}
-  .rate-row .top{display:flex;justify-content:space-between;font-size:.88rem;font-weight:700;color:var(--maroon-deep);margin-bottom:.4rem}
-  .bar{height:14px;background:#f0e6da;border-radius:999px;overflow:hidden}
-  .bar span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--maroon),#a52338 60%,var(--gold));transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
-  .minmax{font-size:.74rem;color:var(--ink-soft);margin-top:.3rem}
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:150;backdrop-filter:blur(14px);background:rgba(10,6,8,.55);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+header.nav.scrolled{background:rgba(10,6,8,.9);border-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:17px;letter-spacing:-.01em;font-family:var(--grok)}
+.logo .seal{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold-soft),var(--gold) 55%,var(--gold-deep));display:grid;place-items:center;color:var(--maroon-deep);font-weight:900;font-size:.62rem;border:2px solid var(--gold-soft);flex-shrink:0}
+.logo small{display:block;font-weight:400;font-size:.62rem;opacity:.7;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;gap:26px;font-size:14.5px;color:var(--muted)}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;cursor:none}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px}
 
-  /* ===== TESTIMONIALS ===== */
-  .quote-box{background:linear-gradient(150deg,var(--maroon-deep),var(--maroon));color:#fff;border-radius:var(--radius);padding:2.6rem 2rem 2.2rem;text-align:center;position:relative;box-shadow:var(--shadow)}
-  .quote-box::before{content:"\201C";position:absolute;top:.4rem;left:1.4rem;font-size:5.5rem;color:rgba(242,183,5,.35);font-family:Georgia,serif;line-height:1}
-  #quoteText{font-size:1.12rem;font-style:italic;max-width:760px;margin:0 auto 1rem;min-height:4.2em;color:#fbeed3}
-  .quote-box .who{color:var(--gold);font-weight:700;font-size:.82rem;letter-spacing:2px;text-transform:uppercase}
-  .q-controls{margin-top:1.3rem;display:flex;justify-content:center;gap:.6rem}
-  .q-controls button{background:rgba(242,183,5,.15);color:var(--gold-soft);border:1px solid rgba(242,183,5,.5);border-radius:999px;padding:.5rem 1.1rem;font-weight:700;cursor:pointer;font-size:.85rem;transition:background .2s}
-  .q-controls button:hover{background:rgba(242,183,5,.32)}
+/* HERO */
+.hero{position:relative;padding:180px 0 120px;overflow:hidden;text-align:center}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none}
+.blob.b1{width:540px;height:540px;background:radial-gradient(circle,rgba(165,35,56,.4),transparent 65%);top:-140px;left:-100px;animation:float1 18s ease-in-out infinite}
+.blob.b2{width:480px;height:480px;background:radial-gradient(circle,rgba(242,183,5,.18),transparent 65%);bottom:-180px;right:-80px;animation:float2 22s ease-in-out infinite}
+@keyframes float1{50%{transform:translate(60px,40px) scale(1.1)}}
+@keyframes float2{50%{transform:translate(-50px,-40px) scale(1.08)}}
+.hero-inner{position:relative;z-index:2}
+.hero h1{font-family:var(--display);font-weight:700;letter-spacing:.01em;font-size:clamp(34px,6.6vw,82px);line-height:1.02;margin:26px auto 0;max-width:1000px}
+.hero h1 .gold{color:var(--gold);text-shadow:0 2px 30px rgba(242,183,5,.35)}
+.hero p.sub{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:660px;margin:28px auto 0}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:36px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;max-width:980px;margin:64px auto 0;position:relative;z-index:2}
+.hero-stats .cell{background:rgba(19,13,15,.7);padding:34px 22px;backdrop-filter:blur(6px)}
+.hero-stats .num{font-family:var(--grok);font-size:clamp(32px,4.4vw,52px);font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--gold)}
+.hero-stats .lbl{font-size:12.5px;color:var(--muted);margin-top:10px;letter-spacing:.12em;text-transform:uppercase}
 
-  /* ===== INSIGHTS ===== */
-  .insight{display:flex;gap:.9rem;align-items:flex-start;background:#fff;border-radius:14px;padding:1.1rem 1.2rem;box-shadow:var(--shadow);border-left:4px solid var(--maroon)}
-  .insight .ico{font-size:1.4rem;line-height:1.2}
-  .insight p{font-size:.9rem;color:var(--ink-soft)}
-  .insight strong{color:var(--maroon-deep)}
+/* MARQUEE */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0;overflow:hidden;white-space:nowrap;background:var(--panel)}
+.marquee-track{display:inline-flex;gap:38px;animation:scroll 30s linear infinite;will-change:transform}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee-track span{font-family:var(--grok);font-size:30px;font-weight:600;color:#3a2a2e;display:inline-flex;align-items:center;gap:38px}
+.marquee-track b{color:var(--gold);font-weight:600}
+.marquee-track .dot{width:8px;height:8px;border-radius:50%;background:var(--maroon-bright)}
 
-  /* ===== TABLE ===== */
-  .table-card{overflow-x:auto}
-  table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
-  caption{caption-side:top;text-align:left;font-weight:800;color:var(--maroon-deep);padding-bottom:.7rem;font-size:1rem}
-  th,td{padding:.65rem .9rem;text-align:left;border-bottom:1px solid #f0e4d4}
-  thead th{background:var(--maroon-deep);color:var(--gold-soft);font-size:.78rem;letter-spacing:1.4px;text-transform:uppercase}
-  tbody tr:nth-child(even){background:#fbf5ea}
-  tbody tr:hover{background:#f7ecd8}
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* KINETIC */
+#kinetic{padding:130px 0;overflow:hidden;position:relative}
+#kineticType{font-family:var(--grok);font-weight:700;letter-spacing:-.03em;line-height:1.1;text-align:center;font-size:clamp(28px,5vw,72px);max-width:1100px;margin:0 auto}
+#kineticType .kw{display:inline-block;color:#2a1d20;transition:color .5s ease,transform .5s ease;transform:translateY(18px)}
 
-  /* ===== ORG CHART ===== */
-  .org-chain{display:flex;flex-direction:column;align-items:center;max-width:520px;margin:auto}
-  .org-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem 1.6rem;text-align:center;width:100%;border-top:4px solid var(--maroon)}
-  .org-card.lead{border-top-color:var(--gold);background:linear-gradient(160deg,#fff,#fdf4dd)}
-  .org-card h3{color:var(--maroon-deep);font-size:1.02rem}
-  .org-role{font-size:.8rem;color:var(--ink-soft);letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-top:.2rem}
-  .org-ava{width:52px;height:52px;margin:0 auto .6rem;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--maroon-dark));color:var(--gold);display:grid;place-items:center;font-weight:900;border:3px solid var(--gold)}
-  .org-link{width:4px;height:34px;background:linear-gradient(var(--maroon),var(--gold));border-radius:2px}
-  .faculty-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.6rem}
-  .faculty-grid li{background:#fbf5ea;border:1px solid #eedfb8;border-radius:10px;padding:.6rem .9rem;font-size:.88rem;font-weight:600;color:var(--maroon-deep)}
-  .faculty-grid li small{display:block;font-weight:700;color:#a07410;font-size:.7rem;letter-spacing:1px;text-transform:uppercase}
+/* BENTO INSIGHTS */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.b-card{position:relative;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:30px;overflow:hidden;transition:border-color .4s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.b-card:hover{border-color:var(--line-gold)}
+.b-card .glow{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(242,183,5,.14),transparent 70%);top:-120px;right:-120px;opacity:0;transition:opacity .5s;pointer-events:none}
+.b-card:hover .glow{opacity:1}
+.b-icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:1.5rem;background:rgba(165,35,56,.14);border:1px solid rgba(165,35,56,.3);margin-bottom:18px}
+.b-card h3{font-family:var(--grok);font-size:19px;font-weight:600;margin:0 0 10px;color:var(--gold-soft);line-height:1.25}
+.b-card p{color:var(--muted);font-size:14.5px}
+.col-3{grid-column:span 3}.col-2{grid-column:span 2}
 
-  /* ===== PUBLICATIONS ===== */
-  .scopus-banner{display:flex;align-items:center;gap:1.4rem;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.4rem 1.8rem;border-left:6px solid #e9711c;flex-wrap:wrap}
-  .scopus-logo{font-size:1.9rem;font-weight:800;color:#e9711c;font-family:Georgia,'Times New Roman',serif;letter-spacing:-.5px;white-space:nowrap}
-  .scopus-logo sup{font-size:.7rem;vertical-align:super}
-  .scopus-banner p{font-size:.92rem;color:var(--ink-soft);flex:1;min-width:240px}
-  .pub-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem 1.6rem;border-top:4px solid #e9711c;display:flex;flex-direction:column;gap:.45rem;transition:transform .25s ease,box-shadow .25s ease}
-  .pub-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(51,9,17,.18)}
-  .pub-top{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
-  .pub-year{background:linear-gradient(135deg,#e9711c,#f59a4e);color:#fff;font-size:.74rem;font-weight:900;letter-spacing:1px;padding:.28rem .8rem;border-radius:999px}
-  .pub-type{background:#fdeadd;color:#b4530f;font-size:.66rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.25rem .7rem;border-radius:999px}
-  .pub-nonscopus{background:#ece7e0;color:#6b625c;border:1px solid #d4ccc2;font-size:.66rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.25rem .7rem;border-radius:999px}
-  .pub-card h3{color:var(--maroon-deep);font-size:1.05rem;line-height:1.35}
-  .pub-meta{font-size:.85rem;color:var(--ink-soft)}
-  .pub-abs{font-size:.88rem;color:var(--ink-soft)}
-  .pub-doi{color:#b4530f;font-weight:700;font-size:.84rem;text-decoration:none;margin-top:auto}
-  .pub-doi:hover{text-decoration:underline}
+/* NOTCHERS */
+.notch-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.notch{position:relative;background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:34px 22px 26px;text-align:center;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.notch:hover{transform:translateY(-6px);border-color:var(--line-gold);box-shadow:0 22px 50px rgba(0,0,0,.5)}
+.notch.first{background:linear-gradient(160deg,rgba(242,183,5,.1),var(--panel));border-color:var(--line-gold)}
+.notch .place{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:var(--maroon-deep);font-weight:800;padding:.4rem 1.1rem;border-radius:999px;font-size:.78rem;letter-spacing:1px;box-shadow:0 6px 16px rgba(242,183,5,.35);white-space:nowrap}
+.notch .avatar{width:66px;height:66px;margin:.8rem auto .9rem;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.3rem;border:3px solid var(--gold)}
+.notch h3{font-size:1.02rem;color:#fff;line-height:1.35;font-family:var(--grok);font-weight:600}
+.notch .honor{display:inline-block;margin:.55rem 0;background:rgba(165,35,56,.25);color:var(--gold-soft);font-size:.66rem;font-weight:700;letter-spacing:1.2px;padding:.3rem .85rem;border-radius:999px;text-transform:uppercase;border:1px solid rgba(165,35,56,.4)}
+.notch .rating{font-size:1.6rem;font-weight:900;color:var(--gold);font-family:var(--grok)}
+.notch .rating small{font-size:.68rem;color:var(--muted);font-weight:600;display:block;letter-spacing:1px}
 
-  /* ===== INNOVATION ===== */
-  .innov-card{display:flex;align-items:center;gap:1.6rem;background:linear-gradient(135deg,#fff,#fdf4dd);border:1px solid #eedfb8;border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem 2.2rem;flex-wrap:wrap}
-  .innov-icon{font-size:2.6rem}
-  .innov-body{flex:1;min-width:240px}
-  .innov-body h3{color:var(--maroon-deep);font-size:1.3rem;margin-bottom:.3rem}
-  .innov-body p{font-size:.92rem;color:var(--ink-soft)}
+/* CARDS / RATING BARS / TABLE */
+.card{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+.card h3{color:var(--gold-soft);font-size:1.05rem;margin-bottom:1.4rem;display:flex;align-items:center;gap:.5rem;font-family:var(--grok);font-weight:600}
+.rate-row{margin-bottom:1.4rem}
+.rate-row .top{display:flex;justify-content:space-between;font-size:.92rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.rate-row .top span:last-child{color:var(--gold)}
+.bar{height:14px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--maroon-bright),var(--gold));transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.minmax{font-size:.76rem;color:var(--muted-2);margin-top:.4rem}
+.table-card{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
+caption{caption-side:top;text-align:left;font-weight:700;color:var(--muted);padding-bottom:1rem;font-size:.92rem}
+th,td{padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--line)}
+thead th{background:rgba(165,35,56,.18);color:var(--gold-soft);font-size:.72rem;letter-spacing:1.4px;text-transform:uppercase}
+tbody tr:hover{background:rgba(242,183,5,.05)}
+tbody th[scope="row"]{color:#fff;font-weight:600}
+tbody td{color:var(--muted)}
 
-  /* ===== CONTACT ===== */
-  .contact-banner{margin-top:2rem;background:linear-gradient(150deg,var(--maroon-deep),var(--maroon));color:#fff;border-radius:var(--radius);padding:2rem 2.2rem;display:flex;align-items:center;justify-content:space-between;gap:1.4rem;flex-wrap:wrap;box-shadow:var(--shadow)}
-  .contact-banner h3{color:var(--gold-soft);font-size:1.15rem;margin-bottom:.3rem}
-  .contact-banner p{color:#f0ddc7;font-size:.92rem}
-  .contact-btn{background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:var(--maroon-deep);font-weight:900;text-decoration:none;padding:.9rem 1.6rem;border-radius:999px;font-size:1rem;box-shadow:0 6px 18px rgba(242,183,5,.4);transition:transform .2s ease;white-space:nowrap}
-  .contact-btn:hover{transform:scale(1.05)}
+/* ORG */
+.org-chain{display:flex;flex-direction:column;align-items:center;max-width:540px;margin:auto}
+.org-card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.6rem;text-align:center;width:100%;transition:border-color .3s}
+.org-card:hover{border-color:var(--line-gold)}
+.org-card.lead{border-color:var(--line-gold);background:linear-gradient(160deg,rgba(242,183,5,.08),var(--panel))}
+.org-card h3{color:#fff;font-size:1rem;font-family:var(--grok);font-weight:600}
+.org-role{font-size:.76rem;color:var(--gold-deep);letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-top:.25rem}
+.org-ava{width:52px;height:52px;margin:0 auto .6rem;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));color:var(--gold);display:grid;place-items:center;font-weight:900;border:3px solid var(--gold)}
+.org-link{width:3px;height:34px;background:linear-gradient(var(--maroon-bright),var(--gold));border-radius:2px}
+.faculty-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-top:.4rem}
+.faculty-grid li{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;font-size:.88rem;font-weight:600;color:#fff;transition:border-color .3s,transform .3s}
+.faculty-grid li:hover{border-color:var(--line-gold);transform:translateY(-3px)}
+.faculty-grid li small{display:block;font-weight:700;color:var(--gold-deep);font-size:.66rem;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
 
-  /* ===== PRIVACY / FOOTER ===== */
-  .privacy{background:#fff;border:1px dashed var(--maroon);border-radius:var(--radius);padding:1.4rem 1.6rem;font-size:.86rem;color:var(--ink-soft);margin-top:2.2rem}
-  .privacy strong{color:var(--maroon-deep)}
-  footer{margin-top:4rem;background:linear-gradient(150deg,var(--maroon-deep),var(--maroon-dark));color:#e9d6c0;text-align:center;padding:2.8rem 1.2rem 2rem}
-  footer .dev{color:var(--gold);font-weight:800;font-size:1.02rem}
-  footer p{font-size:.85rem;margin:.3rem 0}
-  footer .fine{opacity:.65;font-size:.74rem;margin-top:1.2rem}
-  .to-top{position:fixed;right:1.2rem;bottom:1.2rem;background:var(--gold);color:var(--maroon-deep);border:none;width:48px;height:48px;border-radius:50%;font-size:1.3rem;font-weight:900;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:opacity .3s;z-index:99}
-  .to-top.show{opacity:1;pointer-events:auto}
+/* PUBLICATIONS */
+.scopus-banner{display:flex;align-items:center;gap:1.4rem;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-left:5px solid #e9711c;border-radius:var(--radius);padding:1.5rem 1.8rem;flex-wrap:wrap}
+.scopus-logo{font-size:1.9rem;font-weight:800;color:#f0822e;font-family:Georgia,serif;letter-spacing:-.5px;white-space:nowrap}
+.scopus-logo sup{font-size:.7rem;vertical-align:super}
+.scopus-banner p{font-size:.92rem;color:var(--muted);flex:1;min-width:240px}
+.pub-card{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.7rem;display:flex;flex-direction:column;gap:.5rem;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.pub-card:hover{transform:translateY(-5px);border-color:var(--line-gold)}
+.pub-top{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.pub-year{background:linear-gradient(135deg,#e9711c,#f59a4e);color:#1a0a0e;font-size:.72rem;font-weight:900;letter-spacing:1px;padding:.3rem .8rem;border-radius:999px}
+.pub-type{background:rgba(233,113,28,.16);color:#f0a866;font-size:.64rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.28rem .7rem;border-radius:999px;border:1px solid rgba(233,113,28,.3)}
+.pub-nonscopus{background:rgba(255,255,255,.04);color:var(--muted);border:1px solid var(--line);font-size:.64rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.28rem .7rem;border-radius:999px}
+.pub-card h3{color:#fff;font-size:1.04rem;line-height:1.4;font-family:var(--grok);font-weight:600}
+.pub-meta{font-size:.85rem;color:var(--muted)}
+.pub-abs{font-size:.88rem;color:var(--muted-2)}
+.pub-doi{color:#f0a866;font-weight:700;font-size:.84rem;text-decoration:none;margin-top:auto}
+.pub-doi:hover{text-decoration:underline}
+
+/* FACEBOOK */
+.fb-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+.fb-embed{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:18px;min-height:560px;display:flex;justify-content:center;align-items:flex-start;overflow:hidden}
+.fb-embed .fb-page{max-width:100%}
+.fb-side{display:flex;flex-direction:column;gap:18px}
+.fb-card{background:linear-gradient(150deg,rgba(24,119,242,.12),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:14px}
+.fb-card .fbhead{display:flex;align-items:center;gap:14px}
+.fb-logo{width:54px;height:54px;border-radius:16px;background:#1877f2;display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.8rem;font-family:Georgia,serif;flex:none}
+.fb-card h3{font-family:var(--grok);font-size:1.15rem;color:#fff;font-weight:600;line-height:1.25}
+.fb-card p{color:var(--muted);font-size:.92rem}
+.fb-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#1877f2;color:#fff;font-weight:700;padding:14px 22px;border-radius:999px;font-size:.95rem;transition:transform .25s,box-shadow .25s;cursor:none}
+@media(hover:none){.fb-btn{cursor:pointer}}
+.fb-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(24,119,242,.4)}
+.fb-note{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px dashed var(--line-gold);border-radius:var(--radius);padding:22px 26px;font-size:.85rem;color:var(--muted)}
+.fb-note strong{color:var(--gold-soft)}
+
+/* INNOVATION */
+.innov-card{display:flex;align-items:center;gap:1.6rem;background:linear-gradient(135deg,rgba(242,183,5,.08),var(--panel));border:1px solid var(--line-gold);border-radius:var(--radius);padding:2rem 2.2rem;flex-wrap:wrap}
+.innov-icon{font-size:2.6rem}
+.innov-body{flex:1;min-width:240px}
+.innov-body h3{color:var(--gold-soft);font-size:1.4rem;margin-bottom:.3rem;font-family:var(--grok);font-weight:700}
+.innov-body p{font-size:.92rem;color:var(--muted)}
+
+/* QUOTE */
+.quote-box{background:linear-gradient(150deg,var(--maroon-deep),var(--maroon));border:1px solid var(--line-gold);border-radius:var(--radius);padding:3rem 2rem 2.4rem;text-align:center;position:relative;overflow:hidden}
+.quote-box::before{content:"\201C";position:absolute;top:.2rem;left:1.6rem;font-size:6rem;color:rgba(242,183,5,.3);font-family:Georgia,serif;line-height:1}
+#quoteText{font-size:1.15rem;font-style:italic;max-width:780px;margin:0 auto 1rem;min-height:4.5em;color:#fbeed3}
+.quote-box .who{color:var(--gold);font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
+.q-controls{margin-top:1.4rem;display:flex;justify-content:center;gap:.6rem}
+.q-controls button{background:rgba(242,183,5,.12);color:var(--gold-soft);border:1px solid var(--line-gold);border-radius:999px;padding:.5rem 1.1rem;font-weight:700;cursor:none;font-size:.85rem;transition:background .2s}
+@media(hover:none){.q-controls button{cursor:pointer}}
+.q-controls button:hover{background:rgba(242,183,5,.25)}
+
+/* CONTACT */
+.contact-banner{margin-top:2rem;background:linear-gradient(150deg,var(--maroon-deep),var(--maroon));border:1px solid var(--line-gold);border-radius:var(--radius);padding:2rem 2.2rem;display:flex;align-items:center;justify-content:space-between;gap:1.4rem;flex-wrap:wrap}
+.contact-banner h3{color:var(--gold-soft);font-size:1.15rem;margin-bottom:.3rem;font-family:var(--grok);font-weight:600}
+.contact-banner p{color:#f0ddc7;font-size:.92rem}
+
+/* PRIVACY */
+.privacy{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px dashed var(--line-gold);border-radius:var(--radius);padding:1.5rem 1.8rem;font-size:.86rem;color:var(--muted);margin-top:2.2rem}
+.privacy strong{color:var(--gold-soft)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:80px 0 36px;margin-top:40px;position:relative;overflow:hidden;text-align:center}
+.foot-huge{font-family:var(--display);font-weight:700;font-size:clamp(54px,16vw,200px);line-height:.85;letter-spacing:.02em;color:#15090d;text-align:center;margin-bottom:50px;user-select:none}
+.foot-info p{font-size:.88rem;margin:.3rem 0;color:var(--muted)}
+.foot-info .uni{font-size:1.1rem;font-weight:800;color:#fff}
+.foot-info .motto{font-style:italic;color:var(--gold)}
+.foot-info .dev{color:var(--gold);font-weight:800}
+.foot-info a{color:var(--gold-soft)}
+.foot-info .fine{opacity:.6;font-size:.74rem;margin-top:1.4rem}
+
+/* TO TOP */
+.to-top{position:fixed;right:1.2rem;bottom:1.2rem;background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:var(--maroon-deep);border:none;width:48px;height:48px;border-radius:50%;font-size:1.3rem;font-weight:900;cursor:none;box-shadow:0 6px 20px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .3s;z-index:140}
+@media(hover:none){.to-top{cursor:pointer}}
+.to-top.show{opacity:1;pointer-events:auto}
+
+@media(max-width:980px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .col-3,.col-2{grid-column:span 1}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .fb-wrap{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  body{cursor:auto}.cursor,.cursor-ring{display:none}
+  .nav-links{display:none}.burger{display:flex}
+  .bento,.hero-stats,.faculty-grid{grid-template-columns:1fr}
+  .section{padding:72px 0}
+  .hero{padding:140px 0 80px}
+}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+<div class="progress" id="progress"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
-<nav aria-label="Main navigation">
-  <div class="nav-inner">
-    <div class="brand">
-      <div class="seal" aria-hidden="true">MSU</div>
-      <div>BPED Analytics | LEPT | Research<small>MSU – GENERAL SANTOS · <em>fostering excellence</em></small></div>
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#main" class="logo">
+      <span class="seal" aria-hidden="true">MSU</span>
+      <span>BPED · LEPT · Research<small>MSU – General Santos</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#highlights">Highlights</a>
+      <a href="#topnotchers">Top Notchers</a>
+      <a href="#performance">Performance</a>
+      <a href="#organization">Organization</a>
+      <a href="#publications">Publications</a>
+      <a href="#updates">Updates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="burger" id="burger" role="button" aria-label="Open menu" tabindex="0">
+      <span></span><span></span><span></span>
     </div>
-    <ul>
-      <li><a href="#highlights">Highlights</a></li>
-      <li><a href="#topnotchers">Top Notchers</a></li>
-      <li><a href="#performance">Performance</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#organization">Organization</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#innovation">Innovation</a></li>
-      <li><a href="#voices">Voices</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="confetti" id="confetti" aria-hidden="true"></div>
-  <span class="eyebrow">✒ Fostering Excellence · March 2026 LEPT</span>
-  <h1>A Historic <span class="gold">100% Passing Rate</span> for the Pioneering BPED Batch</h1>
-  <p class="sub">Celebrating <strong>Batch Maragsa</strong> — the pioneering batch of Bachelor of Physical Education graduates of Mindanao State University – General Santos City: 53 first-time takers, 53 new Licensed Professional Teachers, and 9 national top notchers.</p>
-  <div class="hero-stats" role="list">
-    <div class="stat-card" role="listitem"><div class="num" data-count="53">0</div><div class="lbl">Takers</div></div>
-    <div class="stat-card" role="listitem"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Passing Rate</div></div>
-    <div class="stat-card" role="listitem"><div class="num" data-count="9">0</div><div class="lbl">Top Notchers</div></div>
-    <div class="stat-card" role="listitem"><div class="num" data-count="94.58" data-dec="2" data-suffix="%">0</div><div class="lbl">Avg Major Rating</div></div>
   </div>
 </header>
 
+<!-- HERO -->
+<section class="hero">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <div class="wrap hero-inner">
+    <span class="pill reveal">✒ Fostering Excellence · March 2026 LEPT</span>
+    <h1>
+      <span class="mask-line"><span>A Historic <span class="gold">100% Passing Rate</span></span></span>
+      <span class="mask-line"><span>for the Pioneering BPED Batch</span></span>
+    </h1>
+    <p class="sub reveal d1">Celebrating <strong>Batch Maragsa</strong> — the pioneering Bachelor of Physical Education graduates of Mindanao State University – General Santos City: 53 first-time takers, 53 new Licensed Professional Teachers, and 9 national top notchers.</p>
+    <div class="hero-actions reveal d2">
+      <a href="#topnotchers" class="btn btn-gold">Meet the Top Notchers <span class="arrow">→</span></a>
+      <a href="#performance" class="btn btn-ghost">View Analytics</a>
+    </div>
+    <div class="hero-stats reveal d3" role="list">
+      <div class="cell" role="listitem"><div class="num" data-count="53">0</div><div class="lbl">Takers</div></div>
+      <div class="cell" role="listitem"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Passing Rate</div></div>
+      <div class="cell" role="listitem"><div class="num" data-count="9">0</div><div class="lbl">Top Notchers</div></div>
+      <div class="cell" role="listitem"><div class="num" data-count="94.58" data-dec="2" data-suffix="%">0</div><div class="lbl">Avg Major Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Batch Maragsa <b>✦</b> 100% First-Take <span class="dot"></span> 9 Top Notchers <b>✦</b> Licensed Professional Teachers <span class="dot"></span> Fostering Excellence <b>✦</b> College of Education <span class="dot"></span></span>
+    <span>Batch Maragsa <b>✦</b> 100% First-Take <span class="dot"></span> 9 Top Notchers <b>✦</b> Licensed Professional Teachers <span class="dot"></span> Fostering Excellence <b>✦</b> College of Education <span class="dot"></span></span>
+  </div>
+</div>
+
 <main id="main">
 
-  <!-- HIGHLIGHTS -->
-  <section id="highlights" aria-labelledby="h-highlights">
-    <div class="sec-head reveal">
-      <p class="tag">At a Glance</p>
-      <h2 id="h-highlights">Key Insights from the Tracer Study</h2>
+<!-- KINETIC -->
+<section id="kinetic">
+  <div class="wrap">
+    <span class="eyebrow" style="display:block;text-align:center;margin-bottom:26px">Why this milestone matters</span>
+    <div id="kineticType">
+      <span class="kw">Preparation&nbsp;</span><span class="kw">turned&nbsp;</span><span class="kw" data-accent>discipline&nbsp;</span><span class="kw">into&nbsp;</span><span class="kw" data-accent>licensure,&nbsp;</span><span class="kw">and&nbsp;</span><span class="kw">a&nbsp;</span><span class="kw" data-accent>pioneering&nbsp;</span><span class="kw">batch&nbsp;</span><span class="kw">into&nbsp;</span><span class="kw" data-accent>history.</span>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="section" id="highlights" aria-labelledby="h-highlights" style="padding-top:30px">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ At a Glance</span>
+      <h2 id="h-highlights">Key insights from the <span class="gold">tracer study</span></h2>
       <p>Aggregated from the official BPED BLEPT tracer survey of all 53 first-batch takers (Class of 2025).</p>
     </div>
-    <div class="grid g3">
-      <div class="insight reveal"><span class="ico" aria-hidden="true">🏆</span><p><strong>Perfect first-take record.</strong> All 53 graduates passed the LEPT on their first attempt — a 100% institutional passing rate for the pioneer batch.</p></div>
-      <div class="insight reveal"><span class="ico" aria-hidden="true">🎖️</span><p><strong>9 national top notchers</strong> landed in the Top 5 to Top 10 nationwide, led by a Top 5 finish with a 94.20% overall rating.</p></div>
-      <div class="insight reveal"><span class="ico" aria-hidden="true">🥇</span><p><strong>49% graduated with Latin honors</strong> — 24 Cum Laude and 2 Magna Cum Laude — showing strong academic foundations before the board exam.</p></div>
-      <div class="insight reveal"><span class="ico" aria-hidden="true">💪</span><p><strong>Major subjects were the strength.</strong> The batch averaged 94.58% in the PE Major area — the highest among the three exam components.</p></div>
-      <div class="insight reveal"><span class="ico" aria-hidden="true">📚</span><p><strong>Professional Education was the challenge.</strong> 87% of takers identified Prof. Ed. as the most difficult area, matching its lowest mean rating of 87.31%.</p></div>
-      <div class="insight reveal"><span class="ico" aria-hidden="true">⏱️</span><p><strong>Preparation pays off.</strong> 72% prepared for 4–6 months, and 60% studied at least 3–5 times a week up to daily.</p></div>
+    <div class="bento">
+      <div class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon">🏆</div><h3>Perfect first-take record</h3><p>All 53 graduates passed the LEPT on their first attempt — a 100% institutional passing rate for the pioneer batch.</p></div>
+      <div class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon">🎖️</div><h3>9 national top notchers</h3><p>Nine passers landed in the Top 5 to Top 10 nationwide, led by a Top 5 finish with a 94.20% overall rating.</p></div>
+      <div class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon">🥇</div><h3>49% with Latin honors</h3><p>24 Cum Laude and 2 Magna Cum Laude — strong academic foundations before the board exam.</p></div>
+      <div class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon">💪</div><h3>Majors were the strength</h3><p>The batch averaged 94.58% in the PE Major area — highest of the three exam components.</p></div>
+      <div class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon">📚</div><h3>Prof. Ed. the challenge</h3><p>87% identified Professional Education as the hardest area, matching its lowest mean of 87.31%.</p></div>
+      <div class="b-card col-3 reveal"><span class="glow"></span><div class="b-icon">⏱️</div><h3>Preparation pays off</h3><p>72% prepared for 4–6 months, and 60% studied at least 3–5 times a week, up to daily.</p></div>
+      <div class="b-card col-3 reveal d1"><span class="glow"></span><div class="b-icon">📈</div><h3>Consistent excellence</h3><p>Overall ratings ranged from 84.6% to 94.2%, with a median of 91.5% across the batch.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TOP NOTCHERS -->
-  <section id="topnotchers" aria-labelledby="h-notch">
-    <div class="sec-head reveal">
-      <p class="tag">Hall of Fame</p>
-      <h2 id="h-notch">The 9 National Top Notchers</h2>
+<!-- TOP NOTCHERS -->
+<section class="section" id="topnotchers" aria-labelledby="h-notch">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Hall of Fame</span>
+      <h2 id="h-notch">The 9 national <span class="gold">top notchers</span></h2>
       <p>March 2026 LEPT – Secondary Level (Physical Education), as published by the Professional Regulation Commission.</p>
     </div>
     <div class="notch-grid" id="notchGrid"></div>
-  </section>
+  </div>
+</section>
 
-  <!-- PERFORMANCE -->
-  <section id="performance" aria-labelledby="h-perf">
-    <div class="sec-head reveal">
-      <p class="tag">Exam Performance</p>
-      <h2 id="h-perf">Rating Analytics</h2>
+<!-- PERFORMANCE -->
+<section class="section" id="performance" aria-labelledby="h-perf">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Exam Performance</span>
+      <h2 id="h-perf">Rating <span class="gold">analytics</span></h2>
       <p>Mean performance across the three LEPT components and the distribution of overall ratings.</p>
     </div>
-    <div class="grid">
-      <div class="card reveal">
-        <h3>📊 Mean Ratings by Component</h3>
-        <div class="rate-row"><div class="top"><span>General Education</span><span>91.31%</span></div><div class="bar"><span data-w="91.31"></span></div><p class="minmax">Range: 78% – 95% · Median 91%</p></div>
-        <div class="rate-row"><div class="top"><span>Professional Education</span><span>87.31%</span></div><div class="bar"><span data-w="87.31"></span></div><p class="minmax">Range: 77% – 93% · Median 88%</p></div>
-        <div class="rate-row"><div class="top"><span>Major (Physical Education)</span><span>94.58%</span></div><div class="bar"><span data-w="94.58"></span></div><p class="minmax">Range: 92% – 96% · Median 95%</p></div>
-        <div class="rate-row"><div class="top"><span>Overall Average</span><span>91.00%</span></div><div class="bar"><span data-w="91.00"></span></div><p class="minmax">Range: 84.6% – 94.2% · Median 91.5%</p></div>
-      </div>
+    <div class="card reveal">
+      <h3>📊 Mean ratings by component</h3>
+      <div class="rate-row"><div class="top"><span>General Education</span><span>91.31%</span></div><div class="bar"><span data-w="91.31"></span></div><p class="minmax">Range: 78% – 95% · Median 91%</p></div>
+      <div class="rate-row"><div class="top"><span>Professional Education</span><span>87.31%</span></div><div class="bar"><span data-w="87.31"></span></div><p class="minmax">Range: 77% – 93% · Median 88%</p></div>
+      <div class="rate-row"><div class="top"><span>Major (Physical Education)</span><span>94.58%</span></div><div class="bar"><span data-w="94.58"></span></div><p class="minmax">Range: 92% – 96% · Median 95%</p></div>
+      <div class="rate-row" style="margin-bottom:0"><div class="top"><span>Overall Average</span><span>91.00%</span></div><div class="bar"><span data-w="91.00"></span></div><p class="minmax">Range: 84.6% – 94.2% · Median 91.5%</p></div>
     </div>
     <div class="card table-card reveal" style="margin-top:1.4rem">
       <table>
@@ -264,79 +410,45 @@
         </tbody>
       </table>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EXTRACURRICULAR ACHIEVEMENTS -->
-  <section id="achievements" aria-labelledby="h-achv">
-    <div class="sec-head reveal">
-      <p class="tag">Beyond the Boards</p>
-      <h2 id="h-achv">Extracurricular Achievements</h2>
+<!-- ACHIEVEMENTS -->
+<section class="section" id="achievements" aria-labelledby="h-achv">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Beyond the Boards</span>
+      <h2 id="h-achv">Extracurricular <span class="gold">achievements</span></h2>
       <p>BPED honorees of the Graduating Class of AY 2024–2025, per MSU–General Santos University Memorandum No. 031-25C (June 18, 2025).</p>
     </div>
     <div class="notch-grid">
-      <div class="notch reveal">
-        <span class="place">LEADERSHIP</span>
-        <div class="avatar" aria-hidden="true">RC</div>
-        <h3>Roxanne Pearl C. Campomanes, LPT</h3>
-        <span class="honor">College Student Leadership Awardee</span>
-        <p class="minmax" style="margin-top:.4rem">College of Education · also a Top 9 LEPT National Top Notcher</p>
-      </div>
-      <div class="notch reveal">
-        <span class="place">SPORTS · MEN</span>
-        <div class="avatar" aria-hidden="true">FL</div>
-        <h3>Franz Jonard Lorejo, LPT</h3>
-        <span class="honor">University Distinction Award for Sports</span>
-        <p class="minmax" style="margin-top:.4rem">Distinction Award for Sports (Men) · Batch Maragsa</p>
-      </div>
-      <div class="notch reveal">
-        <span class="place">SPORTS · WOMEN</span>
-        <div class="avatar" aria-hidden="true">DL</div>
-        <h3>Diana Kaye C. Lamery, LPT</h3>
-        <span class="honor">University Distinction Award for Sports</span>
-        <p class="minmax" style="margin-top:.4rem">Distinction Award for Sports (Women) · Batch Maragsa</p>
-      </div>
+      <div class="notch reveal"><span class="place">LEADERSHIP</span><div class="avatar" aria-hidden="true">RC</div><h3>Roxanne Pearl C. Campomanes, LPT</h3><span class="honor">College Student Leadership Awardee</span><p class="minmax" style="margin-top:.4rem">College of Education · also a Top 9 LEPT National Top Notcher</p></div>
+      <div class="notch reveal d1"><span class="place">SPORTS · MEN</span><div class="avatar" aria-hidden="true">FL</div><h3>Franz Jonard Lorejo, LPT</h3><span class="honor">University Distinction Award for Sports</span><p class="minmax" style="margin-top:.4rem">Distinction Award for Sports (Men) · Batch Maragsa</p></div>
+      <div class="notch reveal d2"><span class="place">SPORTS · WOMEN</span><div class="avatar" aria-hidden="true">DL</div><h3>Diana Kaye C. Lamery, LPT</h3><span class="honor">University Distinction Award for Sports</span><p class="minmax" style="margin-top:.4rem">Distinction Award for Sports (Women) · Batch Maragsa</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ORGANIZATION -->
-  <section id="organization" aria-labelledby="h-org">
-    <div class="sec-head reveal">
-      <p class="tag">College of Education</p>
-      <h2 id="h-org">Organizational Structure</h2>
+<!-- ORGANIZATION -->
+<section class="section" id="organization" aria-labelledby="h-org">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ College of Education</span>
+      <h2 id="h-org">Organizational <span class="gold">structure</span></h2>
       <p>Leadership of MSU–General Santos and the Bachelor of Physical Education Department.</p>
     </div>
     <div class="org-chain reveal" role="list">
-      <div class="org-card lead" role="listitem">
-        <div class="org-ava" aria-hidden="true">SA</div>
-        <h3>Atty. Shidik T. Abantas, MDM, LLM</h3>
-        <p class="org-role">University Chancellor</p>
-      </div>
+      <div class="org-card lead" role="listitem"><div class="org-ava" aria-hidden="true">SA</div><h3>Atty. Shidik T. Abantas, MDM, LLM</h3><p class="org-role">University Chancellor</p></div>
       <div class="org-link" aria-hidden="true"></div>
-      <div class="org-card" role="listitem">
-        <div class="org-ava" aria-hidden="true">ML</div>
-        <h3>Mishell D. Lawas, D.Eng'g</h3>
-        <p class="org-role">Vice Chancellor for Academic Affairs</p>
-      </div>
+      <div class="org-card" role="listitem"><div class="org-ava" aria-hidden="true">ML</div><h3>Mishell D. Lawas, D.Eng'g</h3><p class="org-role">Vice Chancellor for Academic Affairs</p></div>
       <div class="org-link" aria-hidden="true"></div>
-      <div class="org-card" role="listitem">
-        <div class="org-ava" aria-hidden="true">DU</div>
-        <h3>Diane Mae P. Ulanday-Lozano, EdD</h3>
-        <p class="org-role">Dean, College of Education</p>
-      </div>
+      <div class="org-card" role="listitem"><div class="org-ava" aria-hidden="true">DU</div><h3>Diane Mae P. Ulanday-Lozano, EdD</h3><p class="org-role">Dean, College of Education</p></div>
       <div class="org-link" aria-hidden="true"></div>
-      <div class="org-card" role="listitem">
-        <div class="org-ava" aria-hidden="true">JP</div>
-        <h3>Jovar G. Pantao, PhD</h3>
-        <p class="org-role">Assistant Dean, College of Education</p>
-      </div>
+      <div class="org-card" role="listitem"><div class="org-ava" aria-hidden="true">JP</div><h3>Jovar G. Pantao, PhD</h3><p class="org-role">Assistant Dean, College of Education</p></div>
       <div class="org-link" aria-hidden="true"></div>
-      <div class="org-card lead" role="listitem">
-        <div class="org-ava" aria-hidden="true">JB</div>
-        <h3>Jay Carlo S. Bagayas, MSPE</h3>
-        <p class="org-role">Chairperson, Bachelor of Physical Education</p>
-      </div>
+      <div class="org-card lead" role="listitem"><div class="org-ava" aria-hidden="true">JB</div><h3>Jay Carlo S. Bagayas, MSPE</h3><p class="org-role">Chairperson, Bachelor of Physical Education</p></div>
     </div>
-    <div class="card reveal" style="margin-top:1.6rem">
+    <div class="card reveal" style="margin-top:1.8rem">
       <h3>👥 BPED Department Faculty</h3>
       <ul class="faculty-grid">
         <li>Mussar A. Salamat, MSPE <small>SPE Coordinator</small></li>
@@ -356,70 +468,82 @@
         <li>Michelle Ann Torrecampo, MSPE</li>
       </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PUBLICATIONS -->
-  <section id="publications" aria-labelledby="h-pubs">
-    <div class="sec-head reveal">
-      <p class="tag">Research Repository</p>
-      <h2 id="h-pubs">Scopus-Indexed Publications</h2>
+<!-- PUBLICATIONS -->
+<section class="section" id="publications" aria-labelledby="h-pubs">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Research Repository</span>
+      <h2 id="h-pubs">Scopus-indexed <span class="gold">publications</span></h2>
       <p>The official repository of scientific publications by the BPED Department faculty.</p>
     </div>
     <div class="scopus-banner reveal">
       <span class="scopus-logo" aria-label="Scopus">Scopus<sup>®</sup></span>
       <p>Publications below are indexed in <strong>Scopus</strong>, the world's largest abstract and citation database of peer-reviewed literature, unless tagged <em>Non-Scopus</em>.</p>
     </div>
-    <div class="grid g2" style="margin-top:1.4rem" id="pubList">
-      <article class="pub-card reveal">
-        <div class="pub-top"><span class="pub-year">2026</span><span class="pub-type">Experimental Study</span></div>
-        <h3>Effectiveness of a 5-Week High-Intensity Interval Training on Endurance Capacities and BMI Reduction Among Overweight Female Student-Athletes</h3>
-        <p class="pub-meta">Longakit, J., Rodriguez, D., Wacan, J. G., <strong>Bagayas, J. C.</strong>, Salamat, M., Cuya, M., Carrillo, L. J., Andallaza, E. J. C., Alag, Y., &amp; Mancha, R.</p>
-        <p class="pub-abs"><em>Pedagogy of Physical Culture and Sports</em>, 30(2), 111–120.</p>
-        <span class="pub-doi" style="cursor:default">Published Article</span>
-      </article>
-      <article class="pub-card reveal">
-        <div class="pub-top"><span class="pub-year">2026</span><span class="pub-type">Educational Research</span></div>
-        <h3>Examining Artificial Intelligence Literacy of Filipino College Students Using the Theory of Planned Behavior</h3>
-        <p class="pub-meta">Pantao, J. G., Cahapay, M. B., Ulanday-Lozano, D. M. P., Pelones, M. T. P., Andang-Alaiden, E., Lañojan, R. S., Sales, A. M., &amp; <strong>Bagayas, J. C. S.</strong></p>
-        <p class="pub-abs"><em>European Journal of Educational Research</em>, 15(3), 699–711.</p>
-        <a class="pub-doi" href="https://doi.org/10.12973/eu-jer.15.3.699" target="_blank" rel="noopener">DOI: 10.12973/eu-jer.15.3.699 ↗</a>
-      </article>
-      <article class="pub-card reveal">
-        <div class="pub-top"><span class="pub-year">2026</span><span class="pub-type">Cross-Sectional Study</span><span class="pub-nonscopus">Non-Scopus</span></div>
-        <h3>A Cross-Sectional Analysis of Women's Sports Perceptions and Athletic Engagement</h3>
-        <p class="pub-meta"><strong>Bagayas, J. C.</strong>, &amp; Carrillo, L. J.</p>
-        <p class="pub-abs"><em>Journal of Sports and Physical Activity</em>, 2(1), 23–32.</p>
-        <a class="pub-doi" href="https://doi.org/10.64268/jospa.v2i1.21" target="_blank" rel="noopener">DOI: 10.64268/jospa.v2i1.21 ↗</a>
-      </article>
-      <article class="pub-card reveal">
-        <div class="pub-top"><span class="pub-year">2026</span><span class="pub-type">Innovation in PE</span></div>
-        <h3>Futenvol: An Innovative Game for Physical Education Students</h3>
-        <p class="pub-meta"><strong>Bagayas, J. C.</strong>, Diego, C. J. S., Malayao Jr., S. O., &amp; Sumando, G. A.</p>
-        <p class="pub-abs"><em>Journal of Education and Learning (EduLearn)</em>, 20(1), 532–541.</p>
-        <a class="pub-doi" href="https://doi.org/10.11591/edulearn.v20i1.22299" target="_blank" rel="noopener">DOI: 10.11591/edulearn.v20i1.22299 ↗</a>
-      </article>
-      <article class="pub-card reveal">
-        <div class="pub-top"><span class="pub-year">2025</span><span class="pub-type">Sports Psychology</span></div>
-        <h3>Which Goals Matter? Examining the Influence of Task and Ego Orientation on the Sports Performance of Physical Education Students</h3>
-        <p class="pub-meta"><strong>Bagayas, J. C.</strong>, C. Poblador, S. A., Cuya, M., S. Wacan, J. G., Lavente, S., &amp; Longakit, J.</p>
-        <p class="pub-abs"><em>Sportis. Scientific Journal of School Sport, Physical Education and Psychomotricity</em>, 11(4), 1–20.</p>
-        <a class="pub-doi" href="https://doi.org/10.17979/sportis.2025.11.4.11973" target="_blank" rel="noopener">DOI: 10.17979/sportis.2025.11.4.11973 ↗</a>
-      </article>
-      <article class="pub-card reveal">
-        <div class="pub-top"><span class="pub-year">2025</span><span class="pub-type">Experimental Study</span></div>
-        <h3>Evaluating the Effect of a 6-Week Progressive Running Interval Training Program on Endurance and Body Mass Index in Overweight College Students</h3>
-        <p class="pub-meta">Longakit, J., Fajardo, R., Coming, L., Toring-Aque, L., Aque, F. Jr., Villaganas, E. Jr., <strong>Bagayas, J. C.</strong>, Cuya, M., &amp; Cordova, A. J.</p>
-        <p class="pub-abs"><em>Pedagogy of Physical Culture and Sports</em>, 29(4).</p>
-        <a class="pub-doi" href="https://doi.org/10.15561/26649837.2025.0403" target="_blank" rel="noopener">DOI: 10.15561/26649837.2025.0403 ↗</a>
-      </article>
+    <div class="bento" style="margin-top:1.4rem;grid-template-columns:repeat(2,1fr)" id="pubList">
+      <article class="pub-card reveal"><div class="pub-top"><span class="pub-year">2026</span><span class="pub-type">Experimental Study</span></div><h3>Effectiveness of a 5-Week High-Intensity Interval Training on Endurance Capacities and BMI Reduction Among Overweight Female Student-Athletes</h3><p class="pub-meta">Longakit, J., Rodriguez, D., Wacan, J. G., <strong>Bagayas, J. C.</strong>, Salamat, M., Cuya, M., Carrillo, L. J., Andallaza, E. J. C., Alag, Y., &amp; Mancha, R.</p><p class="pub-abs"><em>Pedagogy of Physical Culture and Sports</em>, 30(2), 111–120.</p><span class="pub-doi" style="cursor:default">Published Article</span></article>
+      <article class="pub-card reveal d1"><div class="pub-top"><span class="pub-year">2026</span><span class="pub-type">Educational Research</span></div><h3>Examining Artificial Intelligence Literacy of Filipino College Students Using the Theory of Planned Behavior</h3><p class="pub-meta">Pantao, J. G., Cahapay, M. B., Ulanday-Lozano, D. M. P., Pelones, M. T. P., Andang-Alaiden, E., Lañojan, R. S., Sales, A. M., &amp; <strong>Bagayas, J. C. S.</strong></p><p class="pub-abs"><em>European Journal of Educational Research</em>, 15(3), 699–711.</p><a class="pub-doi" href="https://doi.org/10.12973/eu-jer.15.3.699" target="_blank" rel="noopener">DOI: 10.12973/eu-jer.15.3.699 ↗</a></article>
+      <article class="pub-card reveal"><div class="pub-top"><span class="pub-year">2026</span><span class="pub-type">Cross-Sectional Study</span><span class="pub-nonscopus">Non-Scopus</span></div><h3>A Cross-Sectional Analysis of Women's Sports Perceptions and Athletic Engagement</h3><p class="pub-meta"><strong>Bagayas, J. C.</strong>, &amp; Carrillo, L. J.</p><p class="pub-abs"><em>Journal of Sports and Physical Activity</em>, 2(1), 23–32.</p><a class="pub-doi" href="https://doi.org/10.64268/jospa.v2i1.21" target="_blank" rel="noopener">DOI: 10.64268/jospa.v2i1.21 ↗</a></article>
+      <article class="pub-card reveal d1"><div class="pub-top"><span class="pub-year">2026</span><span class="pub-type">Innovation in PE</span></div><h3>Futenvol: An Innovative Game for Physical Education Students</h3><p class="pub-meta"><strong>Bagayas, J. C.</strong>, Diego, C. J. S., Malayao Jr., S. O., &amp; Sumando, G. A.</p><p class="pub-abs"><em>Journal of Education and Learning (EduLearn)</em>, 20(1), 532–541.</p><a class="pub-doi" href="https://doi.org/10.11591/edulearn.v20i1.22299" target="_blank" rel="noopener">DOI: 10.11591/edulearn.v20i1.22299 ↗</a></article>
+      <article class="pub-card reveal"><div class="pub-top"><span class="pub-year">2025</span><span class="pub-type">Sports Psychology</span></div><h3>Which Goals Matter? Examining the Influence of Task and Ego Orientation on the Sports Performance of Physical Education Students</h3><p class="pub-meta"><strong>Bagayas, J. C.</strong>, C. Poblador, S. A., Cuya, M., S. Wacan, J. G., Lavente, S., &amp; Longakit, J.</p><p class="pub-abs"><em>Sportis. Scientific Journal of School Sport, Physical Education and Psychomotricity</em>, 11(4), 1–20.</p><a class="pub-doi" href="https://doi.org/10.17979/sportis.2025.11.4.11973" target="_blank" rel="noopener">DOI: 10.17979/sportis.2025.11.4.11973 ↗</a></article>
+      <article class="pub-card reveal d1"><div class="pub-top"><span class="pub-year">2025</span><span class="pub-type">Experimental Study</span></div><h3>Evaluating the Effect of a 6-Week Progressive Running Interval Training Program on Endurance and Body Mass Index in Overweight College Students</h3><p class="pub-meta">Longakit, J., Fajardo, R., Coming, L., Toring-Aque, L., Aque, F. Jr., Villaganas, E. Jr., <strong>Bagayas, J. C.</strong>, Cuya, M., &amp; Cordova, A. J.</p><p class="pub-abs"><em>Pedagogy of Physical Culture and Sports</em>, 29(4).</p><a class="pub-doi" href="https://doi.org/10.15561/26649837.2025.0403" target="_blank" rel="noopener">DOI: 10.15561/26649837.2025.0403 ↗</a></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- INNOVATION -->
-  <section id="innovation" aria-labelledby="h-innov">
-    <div class="sec-head reveal">
-      <p class="tag">Department Innovation</p>
-      <h2 id="h-innov">Digital Innovation</h2>
+<!-- FACEBOOK UPDATES -->
+<section class="section" id="updates" aria-labelledby="h-updates">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Latest from the Community</span>
+      <h2 id="h-updates">Updates from <span class="gold">SCOPE MSU GenSan</span></h2>
+      <p>Live posts from the official Facebook page of the SCOPE student organization, MSU – General Santos.</p>
+    </div>
+    <div class="fb-wrap reveal">
+      <div class="fb-embed">
+        <div class="fb-page"
+             data-href="https://www.facebook.com/SCOPEMSUGENSAN"
+             data-tabs="timeline"
+             data-width="500"
+             data-height="640"
+             data-small-header="false"
+             data-adapt-container-width="true"
+             data-hide-cover="false"
+             data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/SCOPEMSUGENSAN" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/SCOPEMSUGENSAN">SCOPE MSU GenSan</a>
+          </blockquote>
+        </div>
+      </div>
+      <div class="fb-side">
+        <div class="fb-card">
+          <div class="fbhead">
+            <span class="fb-logo" aria-hidden="true">f</span>
+            <h3>SCOPE MSU GenSan</h3>
+          </div>
+          <p>Follow the official page for announcements, events, and celebrations from the MSU – General Santos community, including the BPED program.</p>
+          <a class="fb-btn" href="https://www.facebook.com/SCOPEMSUGENSAN" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+            Visit the Page ↗
+          </a>
+        </div>
+        <div class="fb-note">
+          <strong>Don't see the posts?</strong> The live feed loads directly from Facebook and may be blocked by browser privacy settings or ad blockers. You can always view the latest posts using the button above.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVATION -->
+<section class="section" id="innovation" aria-labelledby="h-innov">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Department Innovation</span>
+      <h2 id="h-innov">Digital <span class="gold">innovation</span></h2>
     </div>
     <div class="innov-card reveal">
       <div class="innov-icon" aria-hidden="true">🚀</div>
@@ -427,35 +551,17 @@
         <h3>PASAT-G</h3>
         <p>A web-based application developed by the BPED Department of MSU–General Santos — an innovative digital platform supporting physical education instruction and assessment.</p>
       </div>
-      <a class="contact-btn" href="https://pasatgv2.netlify.app" target="_blank" rel="noopener">Visit PASAT-G ↗</a>
+      <a class="btn btn-gold" href="https://pasatgv2.netlify.app" target="_blank" rel="noopener">Visit PASAT-G <span class="arrow">↗</span></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT & CONTACT -->
-  <section id="contact" aria-labelledby="h-about">
-    <div class="sec-head reveal">
-      <p class="tag">About the Program</p>
-      <h2 id="h-about">Bachelor of Physical Education at MSU–GenSan</h2>
-    </div>
-    <div class="grid g3">
-      <div class="insight reveal"><span class="ico" aria-hidden="true">🏛️</span><p><strong>The Program.</strong> The Bachelor of Physical Education (BPED) is offered by the College of Education of Mindanao State University – General Santos City, preparing future PE teachers in pedagogy, sports science, and movement education.</p></div>
-      <div class="insight reveal"><span class="ico" aria-hidden="true">📝</span><p><strong>The LEPT.</strong> The Licensure Examination for Professional Teachers is administered by the Professional Regulation Commission. Passers earn the Licensed Professional Teacher (LPT) title. The March 2026 exam was the first taken by BPED's pioneering Batch Maragsa.</p></div>
-      <div class="insight reveal"><span class="ico" aria-hidden="true">🌟</span><p><strong>The Legacy.</strong> A 100% first-take passing rate and 9 national top notchers set the standard for future batches — a milestone in the university's mission of <em>fostering excellence</em>.</p></div>
-    </div>
-    <div class="contact-banner reveal">
-      <div>
-        <h3>Questions, verification requests, or research collaboration?</h3>
-        <p>Reach the BPED Department — we'd love to hear from you.</p>
-      </div>
-      <a class="contact-btn" href="mailto:bped@msugensan.edu.ph">✉️ bped@msugensan.edu.ph</a>
-    </div>
-  </section>
-
-  <!-- VOICES -->
-  <section id="voices" aria-labelledby="h-voices">
-    <div class="sec-head reveal">
-      <p class="tag">Voices of the Batch</p>
-      <h2 id="h-voices">Advice for Future LEPT Takers</h2>
+<!-- VOICES -->
+<section class="section" id="voices" aria-labelledby="h-voices">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ Voices of the Batch</span>
+      <h2 id="h-voices">Advice for future <span class="gold">LEPT takers</span></h2>
       <p>Anonymized words of wisdom from the passers themselves.</p>
     </div>
     <div class="quote-box reveal" aria-live="polite">
@@ -467,26 +573,58 @@
         <button type="button" id="nextQ" aria-label="Next quote">Next ›</button>
       </div>
     </div>
+  </div>
+</section>
 
+<!-- CONTACT -->
+<section class="section" id="contact" aria-labelledby="h-about">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="pill">✦ About the Program</span>
+      <h2 id="h-about">Bachelor of Physical Education at <span class="gold">MSU–GenSan</span></h2>
+    </div>
+    <div class="bento" style="grid-template-columns:repeat(3,1fr)">
+      <div class="b-card col-2 reveal"><span class="glow"></span><div class="b-icon">🏛️</div><h3>The Program</h3><p>The Bachelor of Physical Education (BPED) is offered by the College of Education of MSU – General Santos City, preparing future PE teachers in pedagogy, sports science, and movement education.</p></div>
+      <div class="b-card col-2 reveal d1"><span class="glow"></span><div class="b-icon">📝</div><h3>The LEPT</h3><p>The Licensure Examination for Professional Teachers is administered by the PRC. Passers earn the LPT title. The March 2026 exam was the first taken by BPED's pioneering Batch Maragsa.</p></div>
+      <div class="b-card col-2 reveal d2"><span class="glow"></span><div class="b-icon">🌟</div><h3>The Legacy</h3><p>A 100% first-take passing rate and 9 national top notchers set the standard for future batches — a milestone in the university's mission of <em>fostering excellence</em>.</p></div>
+    </div>
+    <div class="contact-banner reveal">
+      <div>
+        <h3>Questions, verification requests, or research collaboration?</h3>
+        <p>Reach the BPED Department — we'd love to hear from you.</p>
+      </div>
+      <a class="btn btn-gold" href="mailto:bped@msugensan.edu.ph">✉️ bped@msugensan.edu.ph</a>
+    </div>
     <div class="privacy reveal">
       <strong>🔒 Data Privacy Notice.</strong> This dashboard presents survey results in aggregate, anonymized form in compliance with the Data Privacy Act of 2012 (RA 10173). No personal contact details, raw individual responses, or identifying information of respondents are displayed. Top notcher names appear as published in the official PRC results, which are a matter of public record. Survey data were collected with consent through the official BPED BLEPT Tracer Form for institutional research purposes.
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
-  <p style="font-size:1.05rem;font-weight:800;color:#fff">Mindanao State University – General Santos City</p>
-  <p style="font-style:italic;color:var(--gold)">fostering excellence</p>
-  <p>College of Education · Bachelor of Physical Education Program · Batch Maragsa (Pioneering Batch)</p>
-  <p style="margin-top:1rem">Developed by <span class="dev">Asst. Prof. Jay Carlo S. Bagayas</span></p>
-  <p>📧 <a href="mailto:bped@msugensan.edu.ph" style="color:var(--gold-soft)">bped@msugensan.edu.ph</a></p>
-  <p class="fine">© 2026 BPED LEPT Analytics · Data source: BPED BLEPT Tracer Study (53 respondents, May 2026) · Built with accessibility in mind (WCAG-aligned)</p>
+  <div class="foot-huge" aria-hidden="true">BPED</div>
+  <div class="wrap foot-info">
+    <p class="uni">Mindanao State University – General Santos City</p>
+    <p class="motto">fostering excellence</p>
+    <p>College of Education · Bachelor of Physical Education Program · Batch Maragsa (Pioneering Batch)</p>
+    <p style="margin-top:1rem">Developed by <span class="dev">Asst. Prof. Jay Carlo S. Bagayas</span></p>
+    <p>📧 <a href="mailto:bped@msugensan.edu.ph">bped@msugensan.edu.ph</a></p>
+    <p class="fine">© 2026 BPED LEPT Analytics · Data source: BPED BLEPT Tracer Study (53 respondents, May 2026) · Built with accessibility in mind (WCAG-aligned)</p>
+  </div>
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0" nonce="bpedlept"></script>
+
 <script>
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /* ---------- Data ---------- */
 const NOTCHERS = [
   {place:5,  name:"Princess Amor B. Peroy, LPT",       honor:"Cum Laude",       rating:"94.20"},
@@ -519,7 +657,7 @@ const grid = document.getElementById('notchGrid');
 NOTCHERS.forEach(n=>{
   const initials = n.name.split(/\s+/).map(w=>w[0]).slice(0,2).join('');
   const div=document.createElement('div');
-  div.className='notch'+(n.place===5?' first':'');
+  div.className='notch reveal'+(n.place===5?' first':'');
   div.innerHTML=`<span class="place">TOP ${n.place}</span>
     <div class="avatar" aria-hidden="true">${initials}</div>
     <h3>${n.name}</h3>
@@ -528,22 +666,7 @@ NOTCHERS.forEach(n=>{
   grid.appendChild(div);
 });
 
-/* ---------- Confetti (respects reduced motion) ---------- */
-const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!reduced){
-  const c=document.getElementById('confetti'), colors=['#f2b705','#ffd95e','#fff','#e8a09a'];
-  for(let i=0;i<40;i++){
-    const p=document.createElement('i');
-    p.style.left=Math.random()*100+'%';
-    p.style.background=colors[Math.floor(Math.random()*colors.length)];
-    p.style.animationDuration=(6+Math.random()*7)+'s';
-    p.style.animationDelay=(Math.random()*8)+'s';
-    p.style.transform=`rotate(${Math.random()*360}deg)`;
-    c.appendChild(p);
-  }
-}
-
-/* ---------- Animated counters ---------- */
+/* ---------- Counters ---------- */
 function animateCounters(){
   document.querySelectorAll('[data-count]').forEach(el=>{
     const target=parseFloat(el.dataset.count), dec=parseInt(el.dataset.dec||0), suf=el.dataset.suffix||'';
@@ -556,20 +679,46 @@ function animateCounters(){
     })(t0);
   });
 }
-animateCounters();
 
-/* ---------- Scroll reveal + bars ---------- */
+/* ---------- Reveal + bars ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){
     e.target.classList.add('in');
     e.target.querySelectorAll('.bar span').forEach(s=>s.style.width=s.dataset.w+'%');
     io.unobserve(e.target);
   }
-}),{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}),{threshold:.14});
+document.querySelectorAll('.reveal,.mask-line').forEach(el=>io.observe(el));
 if(reduced)document.querySelectorAll('.bar span').forEach(s=>s.style.width=s.dataset.w+'%');
 
-/* ---------- Quotes rotator ---------- */
+/* counters when hero stats visible */
+const cIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){animateCounters();cIO.disconnect();}}),{threshold:.4});
+const heroStats=document.querySelector('.hero-stats'); if(heroStats)cIO.observe(heroStats);
+
+/* ---------- Kinetic type ---------- */
+(function(){
+  const sec=document.getElementById('kinetic'); if(!sec)return;
+  const words=sec.querySelectorAll('.kw');
+  if(reduced){words.forEach(w=>{w.style.transform='none';w.style.color=w.hasAttribute('data-accent')?'#f2b705':'#f6efe6';});return;}
+  function reveal(){
+    const r=sec.getBoundingClientRect();
+    const p=Math.min(1,Math.max(0,(window.innerHeight*0.85-r.top)/(r.height+window.innerHeight*0.4)));
+    const n=Math.round(p*words.length);
+    words.forEach((w,i)=>{
+      const acc=w.hasAttribute('data-accent');
+      if(i<n){w.style.color=acc?'#f2b705':'#f6efe6';w.style.transform='translateY(0)';}
+      else{w.style.color='#2a1d20';w.style.transform='translateY(18px)';}
+    });
+  }
+  window.addEventListener('scroll',reveal,{passive:true});reveal();
+})();
+
+/* ---------- Mask lines (hero) ---------- */
+requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  document.querySelectorAll('.hero .mask-line').forEach((l,i)=>setTimeout(()=>l.classList.add('in'),120+i*180));
+}));
+
+/* ---------- Quotes ---------- */
 let qi=0, paused=false, timer=null;
 const qt=document.getElementById('quoteText');
 function showQ(i){qi=(i+QUOTES.length)%QUOTES.length; qt.textContent='"'+QUOTES[qi]+'"';}
@@ -580,11 +729,54 @@ const pb=document.getElementById('pauseQ');
 pb.onclick=()=>{paused=!paused;pb.textContent=paused?'Play':'Pause';pb.setAttribute('aria-pressed',paused);paused?clearInterval(timer):startT();};
 startT();
 
-/* ---------- Back to top ---------- */
-const tt=document.getElementById('toTop');
-addEventListener('scroll',()=>tt.classList.toggle('show',scrollY>600),{passive:true});
+/* ---------- Progress + nav ---------- */
+const progress=document.getElementById('progress'), nav=document.getElementById('nav'), tt=document.getElementById('toTop');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  progress.style.width=pct+'%';
+  nav.classList.toggle('scrolled',h.scrollTop>30);
+  tt.classList.toggle('show',h.scrollTop>600);
+},{passive:true});
 tt.onclick=()=>scrollTo({top:0,behavior:reduced?'auto':'smooth'});
 
+/* ---------- Custom cursor ---------- */
+if(!matchMedia('(hover:none)').matches){
+  const cursor=document.getElementById('cursor'), ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;});
+  (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
+  document.querySelectorAll('a,button,.btn,.notch,.b-card,.pub-card,.faculty-grid li,.org-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'));
+  });
+}
+
+/* ---------- Card tilt ---------- */
+if(!reduced && !matchMedia('(hover:none)').matches){
+  document.querySelectorAll('.b-card,.notch').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(900px) rotateX(${-y*4}deg) rotateY(${x*4}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+  });
+}
+
+/* ---------- Mobile menu ---------- */
+const burger=document.getElementById('burger');
+function toggleMenu(){
+  const links=document.querySelector('.nav-links');
+  const open=links.style.display==='flex';
+  links.style.display=open?'':'flex';
+  if(!open)Object.assign(links.style,{position:'absolute',top:'74px',left:'0',right:'0',flexDirection:'column',background:'#0a0608',padding:'22px 28px',borderBottom:'1px solid rgba(255,255,255,.08)',gap:'18px'});
+}
+burger.addEventListener('click',toggleMenu);
+burger.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleMenu();}});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  if(matchMedia('(max-width:680px)').matches){const links=document.querySelector('.nav-links');links.style.display='';}
+}));
 </script>
 </body>
 </html>
