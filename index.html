@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>document.documentElement.className+=' js';</script>
+<script>
+document.documentElement.className+=' js';
+/* Bulletproof reveal: force-show all content after 2.2s regardless of what any later script does (covers slow/blocked JS or a delayed window load event) */
+window.setTimeout(function(){
+  if(window.__bpedReady)return;
+  var els=document.querySelectorAll('.reveal,.mask-line');
+  for(var i=0;i<els.length;i++)els[i].classList.add('in');
+},2200);
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="BPED Analytics | LEPT | Research — Bachelor of Physical Education, Mindanao State University – General Santos. 100% passing rate, 9 national top notchers, March 2026. Fostering Excellence.">
@@ -13,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syncopate:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<noscript><style>.reveal,.mask-line>span{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 :root{
   --bg:#0a0608;
@@ -1082,6 +1091,7 @@ a.b-card .b-more{margin-top:14px;color:var(--gold);font-weight:600;font-size:.85
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0" nonce="bpedlept"></script>
 
 <script>
+try{
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- Data ---------- */
@@ -1237,13 +1247,15 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
   if(matchMedia('(max-width:680px)').matches){const links=document.querySelector('.nav-links');links.style.display='';}
 }));
 window.__bpedReady=true;
+}catch(_e){document.querySelectorAll('.reveal,.mask-line').forEach(function(el){el.classList.add('in');});window.__bpedReady=true;}
 </script>
 <script>
-/* Failsafe: never leave content hidden if scripts are blocked or error out */
+/* Failsafe: never leave content hidden if scripts are blocked, slow, or error out */
 (function(){
   function show(){document.querySelectorAll('.reveal,.mask-line').forEach(function(e){e.classList.add('in');});}
   if(!('IntersectionObserver' in window)){show();return;}
-  window.addEventListener('load',function(){setTimeout(function(){if(!window.__bpedReady){show();}},1000);});
+  document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__bpedReady)show();},1200);});
+  window.addEventListener('load',function(){setTimeout(function(){if(!window.__bpedReady)show();},400);});
 })();
 </script>
 </body>
